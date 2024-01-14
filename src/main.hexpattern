@@ -5,7 +5,7 @@
 {
     {
         // load registers
-        Gemini Decomposition
+        Identity Reflection
         Compass' Purification
         Vector Reflection -Y
         Additive Distillation
@@ -13,44 +13,65 @@
         Entity Purification
         Gemini Decomposition
         Chronicler's Purification
-
-        // get program counter, and increment for next cycle
-        Gemini Decomposition
-        Numerical Reflection: 32
-        Selection Distillation
-
-        Undertaker's Gambit
-        Numerical Reflection: 1
-        Additive Distillation
-
-        Numerical Reflection: 32
-        Surgeon's Exaltation
         Huginn's Gambit
 
-        // get instruction index
-        Load Word
-
-        Gemini Decomposition
-        Numerical Reflection: 128 // 2^7
-        Modulus Distillation
-
         {
-            Bookkeeper's Gambit: -- // mapping from opcode to instruction heap index
+            // get program counter, and increment for next cycle
+            Muninn's Reflection
+            Gemini Decomposition
+            Numerical Reflection: 32
+            Selection Distillation
+
+            Undertaker's Gambit
+            Numerical Reflection: 1
+            Additive Distillation
+
+            Numerical Reflection: 32
+            Surgeon's Exaltation
+            Huginn's Gambit
+
+            // get instruction index
+            Load Word
+
+            Gemini Decomposition
+            Numerical Reflection: 128 // 2^7
+            Modulus Distillation
+
+            {
+                Bookkeeper's Gambit: -- // mapping from opcode to instruction heap index
+            }
+            Flock's Disintegration
+            Locator's Distillation
+            Numerical Reflection: 1
+            Additive Distillation
+
+            // load instruction patterns
+            Numerical Reflection: 4 // instruction heap size
+            Identity Reflection
+            Compass' Purification
+            Vector Reflection +Y
+            Additive Distillation
+            Encyclopedist's Exaltation
+
+            // recurse if we have enough meta-evals
+            Numerical Reflection: 2
+            Fisherman's Gambit II
+
+            Thanatos' Reflection
+            Numerical Reflection: 4
+            Maximus Distillation
+            {
+                Combination Distillation
+                Bookkeeper's Gambit: v
+            }
+            Flock's Disintegration
+            Augur's Exaltation
+            Hermes' Gambit
+            
+            // execute instruction
+            Hermes' Gambit
         }
-        Flock's Disintegration
-        Locator's Distillation
-        Numerical Reflection: 1
-        Additive Distillation
-
-        // execute instruction
-        Numerical Reflection: 22
-
-        Identity Reflection
-        Compass' Purification
-        Vector Reflection +Y
-        Additive Distillation
-
-        Encyclopedist's Exaltation
+        Gemini Decomposition
         Hermes' Gambit
 
         // save registers
