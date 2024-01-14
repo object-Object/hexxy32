@@ -1,0 +1,29 @@
+#define Read Register (e) = num -> num
+// index -> value
+{
+    Gemini Decomposition
+    Augur's Purification // register 0 is hardwired to 0
+
+    Muninn's Reflection
+    Rotation Gambit
+    Selection Distillation
+
+    Numerical Reflection: 0
+    Augur's Exaltation
+}
+
+#define Write Register (e) = num, num ->
+// index, value ->
+{
+    Prospector's Gambit
+    Augur's Purification // register 0 is hardwired to 0
+    Rotation Gambit II
+
+    Muninn's Reflection
+    Rotation Gambit II
+    Surgeon's Exaltation
+
+    Muninn's Reflection
+    Augur's Exaltation
+    Huginn's Gambit
+}

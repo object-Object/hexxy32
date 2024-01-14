@@ -1,0 +1,18 @@
+#define Decode Instruction: R/S (e) = num -> num, num, num, num, num
+// R: instruction -> funct7, rs2, rs1, funct3, rd
+// S: instruction -> imm[11:5], rs2, rs1, funct3, imm[4:0]
+{
+
+}
+
+#define Decode Instruction: I (e) = num -> num, num, num, num
+// instruction -> imm[11:0], rs1, funct3, rd
+{
+
+}
+
+#define Decode Instruction: U (e) = num -> num, num
+// instruction -> imm[31:12], rd
+{
+
+}

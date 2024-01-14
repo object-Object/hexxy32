@@ -1,0 +1,47 @@
+#define Convert Endian (e) = num -> num
+// converts a little endian 32 bit number to big endian
+{
+    Gemini Decomposition
+    Numerical Reflection: 256 // 2^8
+    Modulus Distillation
+    Numerical Reflection: 2
+    Numerical Reflection: 24
+    Power Distillation
+    Multiplicative Distillation
+    Jester's Gambit
+    
+    Gemini Decomposition
+    Numerical Reflection: 256
+    Division Distillation
+    Floor Purification
+    Numerical Reflection: 256
+    Modulus Distillation
+    Numerical Reflection: 2
+    Numerical Reflection: 16
+    Multiplicative Distillation
+    Jester's Gambit
+    
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Numerical Reflection: 16
+    Power Distillation
+    Division Distillation
+    Floor Purification
+    Numerical Reflection: 256
+    Modulus Distillation
+    Numerical Reflection: 256
+    Multiplicative Distillation
+    Jester's Gambit
+    
+    Numerical Reflection: 2
+    Numerical Reflection: 24
+    Power Distillation
+    Division Distillation
+    Floor Purification
+    Numerical Reflection: 256
+    Modulus Distillation
+    
+    Additive Distillation
+    Additive Distillation
+    Additive Distillation
+}
