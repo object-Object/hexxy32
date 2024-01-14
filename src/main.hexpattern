@@ -1,7 +1,6 @@
 #include "./macros/memory.hexpattern"
 #include "./macros/heaps.hexpattern"
 
-
 {
     {
         // load registers
@@ -30,20 +29,47 @@
             Surgeon's Exaltation
             Huginn's Gambit
 
-            // get instruction index
+            // load instruction
             Load Word
 
+            // funct3 (maybe)
             Gemini Decomposition
+            Numerical Reflection: 2
+            Numerical Reflection: 12
+            Power Distillation
+            Division Distillation
+            Floor Purification
+            Numerical Reflection: 8 // 2^3
+            Modulus Distillation
+
+            // opcode
+            Prospector's Gambit
             Numerical Reflection: 128 // 2^7
             Modulus Distillation
 
+            // lookup instruction heap index
+            // some opcodes have multiple instructions differentiated by funct3
+            // so we decode that here and add it to the index in the lookup if necessary
             {
-                Bookkeeper's Gambit: -- // mapping from opcode to instruction heap index
+                Bookkeeper's Gambit: -- // [opcode, [index, should_add_funct3], ...]
             }
             Flock's Disintegration
+            Undertaker's Gambit
+
             Locator's Distillation
             Numerical Reflection: 1
             Additive Distillation
+
+            Selection Distillation
+            Flock's Disintegration
+            
+            {
+                Additive Distillation
+                Bookkeeper's Gambit: v-
+            }
+            Flock's Disintegration
+            Augur's Exaltation
+            Hermes' Gambit
 
             // load instruction patterns
             Numerical Reflection: 4 // instruction heap size
