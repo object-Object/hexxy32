@@ -1,3 +1,5 @@
+// https://github.com/object-Object/hex-hexes/blob/80fce420b431/macros/Heaps.hexpattern
+
 #define Encyclopedist's Exaltation (EAST aqqqqqeqaqqqqq) = int, int, vec -> any
 // address, heap size, heap location -> value
 // reads a value from an address in the heap
