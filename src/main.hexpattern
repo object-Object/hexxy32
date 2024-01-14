@@ -32,7 +32,16 @@
             // load instruction
             Load Word
 
+            // funct7 (maybe)
+            Gemini Decomposition
+            Numerical Reflection: 2
+            Numerical Reflection: 25
+            Power Distillation
+            Division Distillation
+            Floor Purification
+
             // funct3 (maybe)
+            Prospector's Gambit
             Gemini Decomposition
             Numerical Reflection: 2
             Numerical Reflection: 12
@@ -43,33 +52,62 @@
             Modulus Distillation
 
             // opcode
-            Prospector's Gambit
+            Jester's Gambit
             Numerical Reflection: 128 // 2^7
             Modulus Distillation
 
-            // lookup instruction heap index
-            // some opcodes have multiple instructions differentiated by funct3
-            // so we decode that here and add it to the index in the lookup if necessary
+            // check if funct3 should be used
             {
-                Bookkeeper's Gambit: -- // [opcode, [index, should_add_funct3], ...]
+                // table 1: opcodes that use funct3
+                // [99, 3, 35, 23, 51, 15, 115]
+                Bookkeeper's Gambit: --
             }
             Flock's Disintegration
-            Undertaker's Gambit
 
+            Prospector's Gambit
             Locator's Distillation
             Numerical Reflection: 1
             Additive Distillation
+            Augur's Purification
 
-            Selection Distillation
-            Flock's Disintegration
-            
+            Rotation Gambit
+            Numerical Reflection: 0
+            Augur's Exaltation
+            Rotation Gambit II
+
+            // check if funct7 should be used
             {
-                Additive Distillation
-                Bookkeeper's Gambit: v-
+                // table 2: opcodes that use funct7
+                // [23, 51, 115]
+                Bookkeeper's Gambit: ---
             }
             Flock's Disintegration
+
+            Prospector's Gambit
+            Locator's Distillation
+            Numerical Reflection: 1
+            Additive Distillation
+            Augur's Purification
+
+            Rotation Gambit
+            Numerical Reflection: 0
             Augur's Exaltation
-            Hermes' Gambit
+            Jester's Gambit
+            Rotation Gambit II
+
+            // lookup index
+            Numerical Reflection: 3
+            Flock's Gambit
+
+            {
+                // table 3: [[opcode, funct3, funct7], ...]
+                // [[55, 0, 0], ..., [99, 0, 0], [99, 0, 1], ...]
+                Bookkeeper's Gambit: ----
+            }
+            Flock's Disintegration
+
+            Jester's Gambit
+            Locator's Distillation
 
             // load instruction patterns
             Numerical Reflection: 4 // instruction heap size
