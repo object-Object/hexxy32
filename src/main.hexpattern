@@ -1,3 +1,7 @@
+#include "./macros/memory.hexpattern"
+#include "./macros/heaps.hexpattern"
+
+
 {
     {
         // load registers
@@ -5,11 +9,11 @@
         Compass' Purification
         Vector Reflection -Y
         Additive Distillation
-        
+
         Entity Purification
         Gemini Decomposition
         Chronicler's Purification
-        
+
         // get program counter, and increment for next cycle
         Gemini Decomposition
         Numerical Reflection: 32
@@ -22,8 +26,32 @@
         Numerical Reflection: 32
         Surgeon's Exaltation
         Huginn's Gambit
-        
-        
+
+        // get instruction index
+        Load Word
+
+        Gemini Decomposition
+        Numerical Reflection: 128 // 2^7
+        Modulus Distillation
+
+        {
+            Bookkeeper's Gambit: -- // mapping from opcode to instruction heap index
+        }
+        Flock's Disintegration
+        Locator's Distillation
+        Numerical Reflection: 1
+        Additive Distillation
+
+        // execute instruction
+        Numerical Reflection: 22
+
+        Identity Reflection
+        Compass' Purification
+        Vector Reflection +Y
+        Additive Distillation
+
+        Encyclopedist's Exaltation
+        Hermes' Gambit
 
         // save registers
         Muninn's Reflection
@@ -48,8 +76,8 @@
     Flock's Gambit
 
     Chronicler's Gambit
-    
-    // start computer
+
+    // summon processor
     Vector Reflection +Y
     Additive Distillation
     Numerical Reflection: 100
