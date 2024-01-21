@@ -1,11 +1,11 @@
 #include "../macros/bytes.hexpattern"
-#include "../macros/instructions.hexpattern"
 #include "../macros/registers.hexpattern"
 
-#define Instruction 18: ADDI (e) = num ->
-{
-    Decode Instruction: I
+// register-immediate
 
+#define Instruction 18: ADDI (e) = num, num, num ->
+// I-type
+{
     Read Register
     Additive Distillation
     Numerical Reflection: 32
@@ -13,10 +13,9 @@
     Write Register
 }
 
-#define Instruction 19: SLTI (e) = num ->
+#define Instruction 19: SLTI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Two's Complement Purification
     Jester's Gambit
@@ -30,10 +29,9 @@
     Write Register
 }
 
-#define Instruction 20: SLTIU (e) = num ->
+#define Instruction 20: SLTIU (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Jester's Gambit
 
@@ -45,57 +43,51 @@
     Write Register
 }
 
-#define Instruction 21: XORI (e) = num ->
+#define Instruction 21: XORI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Intersection Distillation
     Write Register
 }
 
-#define Instruction 22: ORI (e) = num ->
+#define Instruction 22: ORI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Unifying Distillation
     Write Register
 }
 
-#define Instruction 23: ANDI (e) = num ->
+#define Instruction 23: ANDI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Exclusionary Distillation
     Write Register
 }
 
-#define Instruction 24: SLLI (e) = num ->
+#define Instruction 24: SLLI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Jester's Gambit
     Logical Shift Left
     Write Register
 }
 
-#define Instruction 25: SRLI (e) = num ->
+#define Instruction 25: SRLI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
     Jester's Gambit
     Logical Shift Right
     Write Register
 }
 
-#define Instruction 26: SRAI (e) = num ->
+#define Instruction 26: SRAI (e) = num, num, num ->
+// I-type
 {
-    Decode Instruction: I
-
     Read Register
 
     Jester's Gambit
@@ -110,5 +102,149 @@
     Subtractive Distillation
     Extend Sign
 
+    Write Register
+}
+
+// register-register
+
+#define Instruction 27: ADD (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+    Write Register
+}
+
+#define Instruction 28: SUB (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Jester's Gambit
+
+    Subtractive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+    Write Register
+}
+
+#define Instruction 29: SLL (e) = num, num, num ->
+// R-type
+{
+    Read Register
+
+    Jester's Gambit
+    Read Register
+    Numerical Reflection: 5
+    Truncate Integer
+
+    Logical Shift Left
+    Write Register
+}
+
+#define Instruction 30: SLT (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Two's Complement Purification
+
+    Jester's Gambit
+    Read Register
+    Two's Complement Purification
+
+    Minimus Distillation
+    Numerical Reflection: 1
+    Numerical Reflection: 0
+    Augur's Exaltation
+
+    Write Register
+}
+
+#define Instruction 31: SLTU (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Jester's Gambit
+
+    Minimus Distillation
+    Numerical Reflection: 1
+    Numerical Reflection: 0
+    Augur's Exaltation
+
+    Write Register
+}
+
+#define Instruction 32: XOR (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Exclusionary Distillation
+    Write Register
+}
+
+#define Instruction 33: SRL (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Jester's Gambit
+
+    Numerical Reflection: 5
+    Truncate Integer
+
+    Logical Shift Right
+    Write Register
+}
+
+#define Instruction 34: SRA (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Jester's Gambit
+
+    Numerical Reflection: 5
+    Truncate Integer
+
+    Undertaker's Gambit
+    Logical Shift Right
+
+    Numerical Reflection: 32
+    Rotation Gambit
+    Subtractive Distillation
+    Extend Sign
+
+    Write Register
+}
+
+#define Instruction 35: OR (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Unifying Distillation
+    Write Register
+}
+
+#define Instruction 36: AND (e) = num, num, num ->
+// R-type
+{
+    Read Register
+    Jester's Gambit
+    Read Register
+    Intersection Distillation
     Write Register
 }
