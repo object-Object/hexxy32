@@ -6,7 +6,7 @@ A RISC-V (`rv32i`) computer implemented in Hex Casting. Heavily WIP.
 
 ## Data representation
 
-Memory is represented as a list of number iota. Hex Casting's numbers are internally stored as doubles (though some operations convert them to longs or ints), so we store 32 bits (4 bytes) in each number iota, as non-negative numbers between 0 and 2^32-1. This means immediates are unsigned by default and [converted to signed](https://ocroquette.wordpress.com/2015/10/26/converting-unsigned-to-signed-integers-using-powershell-or-excel/) only when necessary.
+Memory is represented as a list of number iota. Hex Casting's numbers are internally stored as doubles (though some operations convert them to longs or ints), so we store 32 bits (4 bytes) in each number iota, as non-negative numbers between 0 and 2^32-1. This means immediates are unsigned by default and [converted to/from signed](https://stackoverflow.com/a/62328202) only when necessary.
 
 ## Registers
 

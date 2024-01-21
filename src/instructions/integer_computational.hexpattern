@@ -1,0 +1,39 @@
+#include "../macros/bytes.hexpattern"
+#include "../macros/instructions.hexpattern"
+#include "../macros/registers.hexpattern"
+
+#define Instruction 18: ADDI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+    
+    Write Register
+}
+
+#define Instruction 19: SLTI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Two's Complement Purification
+    Jester's Gambit
+    Two's Complement Purification
+
+    Minimus Distillation
+    Numerical Reflection: 1
+    Numerical Reflection: 0
+    Augur's Exaltation
+
+    Write Register
+}
+
+#define Instruction 20: SLTIU (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+}
