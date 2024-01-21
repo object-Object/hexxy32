@@ -36,4 +36,80 @@
     Decode Instruction: I
 
     Read Register
+    Jester's Gambit
+
+    Minimus Distillation
+    Numerical Reflection: 1
+    Numerical Reflection: 0
+    Augur's Exaltation
+
+    Write Register
+}
+
+#define Instruction 21: XORI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Intersection Distillation
+    Write Register
+}
+
+#define Instruction 22: ORI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Unifying Distillation
+    Write Register
+}
+
+#define Instruction 23: ANDI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Exclusionary Distillation
+    Write Register
+}
+
+#define Instruction 24: SLLI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Jester's Gambit
+    Logical Shift Left
+    Write Register
+}
+
+#define Instruction 25: SRLI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+    Jester's Gambit
+    Logical Shift Right
+    Write Register
+}
+
+#define Instruction 26: SRAI (e) = num ->
+{
+    Decode Instruction: I
+
+    Read Register
+
+    Jester's Gambit
+    Numerical Reflection: 5
+    Truncate Integer
+
+    Undertaker's Gambit
+    Logical Shift Right
+
+    Numerical Reflection: 32
+    Rotation Gambit
+    Subtractive Distillation
+    Extend Sign
+
+    Write Register
 }
