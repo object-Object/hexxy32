@@ -1,83 +1,311 @@
+#define Logical Shift Left (e) = num, num -> num
+// value, bits to shift -> shifted value
+// does not check for overflow
+{
+    Numerical Reflection: 2
+    Jester's Gambit
+    Power Distillation
+    Multiplicative Distillation
+}
+
+#define Logical Shift Right (e) = num, num -> num
+// value, bits to shift -> shifted value
+{
+    Numerical Reflection: 2
+    Jester's Gambit
+    Power Distillation
+    Division Distillation
+    Floor Purification
+}
+
+#define Truncate Integer (e) = num, num -> num
+// value, length in bits -> truncated value
+// eg. truncate(1110_2, 2) = 10
+{
+    Numerical Reflection: 2
+    Jester's Gambit
+    Power Distillation
+    Modulus Distillation
+}
+
+#define Split Integer (e) = num, num -> num
+// value, length in bits -> value[:length], value[length-1:]
+// eg. truncate2(0110_2, 2) = 01, 10
+{
+    Dioscuri Gambit
+    Logical Shift Right
+    Rotation Gambit II
+    Truncate Integer
+}
+
+#define Slice Integer (e) = num, num, num -> num
+// value, left bound, right bound -> value[left:right]
+// both bounds are inclusive
+// left >= right, eg. num[11:0] is the lower 12 bits of num
+{
+    Undertaker's Gambit
+    Subtractive Distillation
+    Numerical Reflection: 1
+    Additive Distillation
+    
+    Rotation Gambit II
+    Logical Shift Right
+
+    Jester's Gambit
+    Truncate Integer
+}
+
+#define Slice Integer II (e) = num, num, num -> num, num
+// value, left bound, right bound -> value[:left+1], value[left:right]
+{
+    Undertaker's Gambit
+    Subtractive Distillation
+    Numerical Reflection: 1
+    Additive Distillation
+    
+    Rotation Gambit II
+    Logical Shift Right
+
+    Jester's Gambit
+    Split Integer
+}
+
 #define Convert Endian (e) = num -> num
 // converts a little endian 32 bit number to big endian
 {
-    Gemini Decomposition
-    Numerical Reflection: 256 // 2^8
-    Modulus Distillation
-    Numerical Reflection: 2
+    Numerical Reflection: 8
+    Split Integer
     Numerical Reflection: 24
-    Power Distillation
-    Multiplicative Distillation
-    Jester's Gambit
+    Logical Shift Left
     
-    Gemini Decomposition
-    Numerical Reflection: 256
-    Division Distillation
-    Floor Purification
-    Numerical Reflection: 256
-    Modulus Distillation
-    Numerical Reflection: 2
+    Jester's Gambit
+    Numerical Reflection: 8
+    Split Integer
     Numerical Reflection: 16
-    Multiplicative Distillation
-    Jester's Gambit
+    Logical Shift Left
     
-    Gemini Decomposition
-    Numerical Reflection: 2
-    Numerical Reflection: 16
-    Power Distillation
-    Division Distillation
-    Floor Purification
-    Numerical Reflection: 256
-    Modulus Distillation
-    Numerical Reflection: 256
-    Multiplicative Distillation
     Jester's Gambit
-    
-    Numerical Reflection: 2
-    Numerical Reflection: 24
-    Power Distillation
-    Division Distillation
-    Floor Purification
-    Numerical Reflection: 256
-    Modulus Distillation
+    Numerical Reflection: 8
+    Split Integer
+    Numerical Reflection: 8
+    Logical Shift Left
     
     Additive Distillation
     Additive Distillation
+    Additive Distillation
+}
+
+#define Extend Sign (e) = num, num -> num
+// value, length in bits of value -> sign-extended value
+{
+    // sign bit
+    Dioscuri Gambit
+    Numerical Reflection: 1
+    Subtractive Distillation
+    Logical Shift Right
+
+    // 2^(32-len) * sign
+    Prospector's Gambit
+    Numerical Reflection: 2
+    Numerical Reflection: 32
+    Rotation Gambit
+    Subtractive Distillation
+    Power Distillation
+    Multiplicative Distillation
+
+    // (extended sign << len) + value
+    Logical Shift Left
     Additive Distillation
 }
 
 #define Decode Instruction: R (e) = num -> num, num, num, num
-// instruction -> funct7, rs2, rs1, rd
+// instruction -> rd, rs1, rs2
 {
-
+    // rd
+    Numerical Reflection: 11
+    Numerical Reflection: 7
+    Slice Integer II
+    
+    // rs1
+    Jester's Gambit
+    Numerical Reflection: 3
+    Logical Shift Right
+    Numerical Reflection: 5
+    Split Integer
+    
+    // rs2
+    Jester's Gambit
+    Numerical Reflection: 5
+    Truncate Integer
 }
 
 #define Decode Instruction: I (e) = num -> num, num, num
-// instruction -> imm, rs1, rd
+// instruction -> rd, imm, rs1
 {
+    // rd
+    Numerical Reflection: 11
+    Numerical Reflection: 7
+    Slice Integer II
+    
+    // rs1
+    Jester's Gambit
+    Numerical Reflection: 3
+    Logical Shift Right
+    Numerical Reflection: 5
+    Split Integer
 
+    // imm
+    Jester's Gambit
+    Numerical Reflection: 12
+    Extend Sign
+
+    Jester's Gambit
 }
 
 #define Decode Instruction: S (e) = num -> num, num, num
-// instruction -> imm, rs2, rs1
+// instruction -> imm, rs1, rs2
 {
+    // imm[4:0]
+    Numerical Reflection: 11
+    Numerical Reflection: 7
+    Slice Integer II
+    
+    // rs1
+    Jester's Gambit
+    Numerical Reflection: 3
+    Logical Shift Right
+    Numerical Reflection: 5
+    Split Integer
+    
+    // rs2
+    Jester's Gambit
+    Numerical Reflection: 5
+    Split Integer
 
+    // (imm[11:5] << 5) + imm[4:0]
+    Jester's Gambit
+    Numerical Reflection: 5
+    Logical Shift Left
+    Numerical Reflection: 4
+    Fisherman's Gambit
+    Additive Distillation
+
+    // imm
+    Numerical Reflection: 12
+    Extend Sign
+    
+    Rotation Gambit II
 }
 
 #define Decode Instruction: B (e) = num -> num, num, num
-// instruction -> imm, rs2, rs1
+// instruction -> imm, rs1, rs2
 {
+    // imm[11] << 11
+    Numerical Reflection: 7
+    Logical Shift Right
+    Numerical Reflection: 1
+    Split Integer
+    Numerical Reflection: 11
+    Logical Shift Left
+    
+    // imm[4:1] << 1
+    Jester's Gambit
+    Numerical Reflection: 4
+    Split Integer
+    Numerical Reflection: 1
+    Logical Shift Left
+    
+    // rs1
+    Jester's Gambit
+    Numerical Reflection: 3
+    Logical Shift Right
+    Numerical Reflection: 5
+    Split Integer
+    
+    // rs2
+    Jester's Gambit
+    Numerical Reflection: 5
+    Split Integer
 
+    // imm[10:5] << 5
+    Jester's Gambit
+    Numerical Reflection: 6
+    Split Integer
+    Numerical Reflection: 5
+    Logical Shift Left
+
+    // imm[12] << 12
+    Jester's Gambit
+    Numerical Reflection: 12
+    Logical Shift Left
+
+    // imm
+    Numerical Reflection: 289 // dcfeba
+    Swindler's Gambit
+    
+    Additive Distillation
+    Additive Distillation
+    Additive Distillation
+
+    Numerical Reflection: 13
+    Extend Sign
+
+    Rotation Gambit II
 }
 
 #define Decode Instruction: U (e) = num -> num, num
-// instruction -> imm, rd
+// instruction -> rd, imm
 {
+    // rd
+    Numerical Reflection: 11
+    Numerical Reflection: 7
+    Slice Integer II
 
+    // imm
+    Jester's Gambit
+    Numerical Reflection: 12
+    Logical Shift Left
 }
 
 #define Decode Instruction: J (e) = num -> num, num
-// instruction -> imm, rd
+// instruction -> rd, imm
 {
+    // rd
+    Numerical Reflection: 11
+    Numerical Reflection: 7
+    Slice Integer II
 
+    // imm[19:12] << 12
+    Jester's Gambit
+    Numerical Reflection: 8
+    Split Integer
+    Numerical Reflection: 12
+    Logical Shift Left
+    
+    // imm[11] << 11
+    Jester's Gambit
+    Numerical Reflection: 1
+    Split Integer
+    Numerical Reflection: 11
+    Logical Shift Left
+    
+    // imm[10:1] << 1
+    Jester's Gambit
+    Numerical Reflection: 10
+    Split Integer
+    Numerical Reflection: 1
+    Logical Shift Left
+    
+    // imm[20] << 20
+    Jester's Gambit
+    Numerical Reflection: 20
+    Logical Shift Left
+
+    // imm
+    Additive Distillation
+    Additive Distillation
+    Additive Distillation
+
+    Numerical Reflection: 21
+    Extend Sign
 }
