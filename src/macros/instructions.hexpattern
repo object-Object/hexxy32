@@ -25,7 +25,7 @@
 }
 
 #define Decode Instruction: I (e) = num -> num, num, num
-// instruction -> rd, imm, rs1
+// instruction -> rd, rs1, imm
 {
     // rd
     Numerical Reflection: 11
@@ -44,8 +44,6 @@
     Jester's Gambit
     Numerical Reflection: 12
     Extend Sign
-
-    Jester's Gambit
 }
 
 #define Decode Instruction: S (e) = num -> num, num, num
