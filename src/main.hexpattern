@@ -2,7 +2,7 @@
 #include "./macros/heaps.hexpattern"
 
 {
-    {
+    Consideration: {
         // load registers
         Identity Reflection
         Compass' Purification
@@ -14,7 +14,7 @@
         Chronicler's Purification
         Huginn's Gambit
 
-        {
+        Consideration: {
             // get program counter, and increment for next cycle
             Muninn's Reflection
             Gemini Decomposition
@@ -134,14 +134,14 @@
             
             // execute instruction
             Hermes' Gambit
-        }
+        Consideration: }
         Gemini Decomposition
         Hermes' Gambit
 
         // save registers
         Muninn's Reflection
         Chronicler's Gambit
-    }
+    Consideration: }
 
     // target pedestal
     Mind's Reflection
