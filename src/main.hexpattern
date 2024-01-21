@@ -15,17 +15,17 @@
         Huginn's Gambit
 
         Consideration: {
-            // get program counter, and increment for next cycle
+            // get program counter and save tentative next program counter
             Muninn's Reflection
             Gemini Decomposition
             Numerical Reflection: 32
             Selection Distillation
 
             Undertaker's Gambit
-            Numerical Reflection: 1
+            Numerical Reflection: 4
             Additive Distillation
 
-            Numerical Reflection: 32
+            Numerical Reflection: 33
             Surgeon's Exaltation
             Huginn's Gambit
 
@@ -134,6 +134,15 @@
             
             // execute instruction
             Hermes' Gambit
+
+            // update program counter
+            Muninn's Reflection
+            Numerical Reflection: 32
+            Prospector's Gambit
+            Numerical Reflection: 33
+            Selection Distillation
+            Surgeon's Exaltation
+            Huginn's Gambit
         Consideration: }
         Gemini Decomposition
         Hermes' Gambit
