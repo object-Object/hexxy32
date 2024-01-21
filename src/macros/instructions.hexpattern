@@ -1,4 +1,5 @@
 #include "./bytes.hexpattern"
+#include "./registers.hexpattern"
 
 #define Decode Instruction: R (e) = num -> num, num, num, num
 // instruction -> rd, rs1, rs2
@@ -14,11 +15,13 @@
     Logical Shift Right
     Numerical Reflection: 5
     Split Integer
+    Read Register
     
     // rs2
     Jester's Gambit
     Numerical Reflection: 5
     Truncate Integer
+    Read Register
 }
 
 #define Decode Instruction: I (e) = num -> num, num, num
@@ -35,6 +38,7 @@
     Logical Shift Right
     Numerical Reflection: 5
     Split Integer
+    Read Register
 
     // imm
     Jester's Gambit
@@ -58,11 +62,13 @@
     Logical Shift Right
     Numerical Reflection: 5
     Split Integer
+    Read Register
     
     // rs2
     Jester's Gambit
     Numerical Reflection: 5
     Split Integer
+    Read Register
 
     // (imm[11:5] << 5) + imm[4:0]
     Jester's Gambit
@@ -103,11 +109,13 @@
     Logical Shift Right
     Numerical Reflection: 5
     Split Integer
+    Read Register
     
     // rs2
     Jester's Gambit
     Numerical Reflection: 5
     Split Integer
+    Read Register
 
     // imm[10:5] << 5
     Jester's Gambit
