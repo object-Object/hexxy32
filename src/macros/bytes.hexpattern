@@ -71,15 +71,47 @@
 }
 
 #define Two's Complement Purification (e) = num -> num
-// https://stackoverflow.com/a/62328202
+// https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html#whyworks
 {
     Numerical Reflection: 2
     Numerical Reflection: 32
     Power Distillation
     Jester's Gambit
     Subtractive Distillation
-    Numerical Reflection: 1
-    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+}
+
+#define Convert Unsigned to Signed (e) = num -> num
+{
+    // two's complement numbers are negative if the leftmost bit is 1, ie. >=2^31
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Numerical Reflection: 31
+    Power Distillation
+    Maximus Distillation
+
+    Prospector's Gambit
+    Two's Complement Purification
+    Numerical Reflection: -1
+    Multiplicative Distillation
+
+    Rotation Gambit
+    Augur's Exaltation
+}
+
+#define Convert Signed to Unsigned (e) = num -> num
+{
+    Gemini Decomposition
+    Numerical Reflection: 0
+    Minimus Distillation
+
+    Prospector's Gambit
+    Length Purification
+    Two's Complement Purification
+
+    Rotation Gambit
+    Augur's Exaltation
 }
 
 #define Convert Endian (e) = num -> num

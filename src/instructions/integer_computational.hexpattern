@@ -17,9 +17,9 @@
 #define Instruction 19: SLTI (e) = num, num, num ->
 // I-type
 {
-    Two's Complement Purification
+    Convert Unsigned to Signed
     Jester's Gambit
-    Two's Complement Purification
+    Convert Unsigned to Signed
     Jester's Gambit
 
     Minimus Distillation
@@ -106,7 +106,8 @@
 #define Instruction 28: SUB (e) = num, num, num ->
 // R-type
 {
-    Subtractive Distillation
+    Two's Complement Purification
+    Additive Distillation
     Numerical Reflection: 32
     Truncate Integer
     Write Register
@@ -124,9 +125,9 @@
 #define Instruction 30: SLT (e) = num, num, num ->
 // R-type
 {
-    Two's Complement Purification
+    Convert Unsigned to Signed
     Jester's Gambit
-    Two's Complement Purification
+    Convert Unsigned to Signed
     Jester's Gambit
 
     Minimus Distillation
