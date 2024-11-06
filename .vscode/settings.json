@@ -10,6 +10,10 @@
         "Mediaworks": false,
         "Hex Gloop": false,
         "Oneironaut": false,
-        "Hex Keys": false,
+        "Hex Keys": false
     },
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

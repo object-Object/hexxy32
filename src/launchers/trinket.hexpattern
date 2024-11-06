@@ -1,0 +1,41 @@
+#include "../types/hexcasting.hexpattern"
+
+// step processor by one instruction
+{
+    // get processor position
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Archer's Distillation
+    
+    // bootstrap processor code
+    Gemini Decomposition
+    Vector Reflection +Y
+    Additive Distillation
+    Ritualist's Purification
+    Flock's Disintegration
+    Hermes' Gambit
+    
+    // run startup, then eval once, then shutdown
+    Jester's Gambit
+    Additive Distillation
+    Additive Distillation
+    Hermes' Gambit
+}
+
+// reset registers and PC to initial state
+{
+    // get processor position
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Archer's Distillation
+
+    // reset ravenmind
+    Vector Reflection -Y
+    Additive Distillation
+    Nullary Reflection
+    Ritualist's Gambit
+}

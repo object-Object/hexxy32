@@ -1,0 +1,29 @@
+#include "../types/hexcasting.hexpattern"
+
+{
+    // processor pos (injected during bootstrap)
+    {
+        Bookkeeper's Gambit: -
+    }
+    Flock's Disintegration
+    
+    // load saved ravenmind
+    Vector Reflection -Y
+    Additive Distillation
+    Ritualist's Purification
+    
+    // initialize defaults
+    Numerical Reflection: 0
+    Numerical Reflection: 33
+    Gemini Gambit
+    Numerical Reflection: 33
+    Flock's Gambit
+
+    // use saved values if present, else use defaults
+    Prospector's Gambit
+    Augur's Purification
+    Rotation Gambit II
+    Augur's Exaltation
+    
+    Huginn's Gambit
+}

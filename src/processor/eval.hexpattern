@@ -1,0 +1,138 @@
+{
+    // instruction handlers (injected during bootstrap)
+    {
+        Bookkeeper's Gambit: -
+    }
+    Flock's Disintegration
+
+    // TODO: fix
+
+    // get program counter and save tentative next program counter
+    Muninn's Reflection
+    Gemini Decomposition
+    Numerical Reflection: 32
+    Selection Distillation
+
+    Undertaker's Gambit
+    Numerical Reflection: 4
+    Additive Distillation
+
+    Numerical Reflection: 33
+    Surgeon's Exaltation
+    Huginn's Gambit
+
+    // load instruction
+    Load Word
+
+    // funct7 (maybe)
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Numerical Reflection: 25
+    Power Distillation
+    Division Distillation
+    Floor Purification
+
+    // funct3 (maybe)
+    Prospector's Gambit
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Numerical Reflection: 12
+    Power Distillation
+    Division Distillation
+    Floor Purification
+    Numerical Reflection: 8 // 2^3
+    Modulus Distillation
+
+    // opcode
+    Jester's Gambit
+    Numerical Reflection: 128 // 2^7
+    Modulus Distillation
+
+    // check if funct3 should be used
+    {
+        // table 1: opcodes that use funct3
+        // [99, 3, 35, 23, 51, 15, 115]
+        Bookkeeper's Gambit: --
+    }
+    Flock's Disintegration
+
+    Prospector's Gambit
+    Locator's Distillation
+    Numerical Reflection: 1
+    Additive Distillation
+    Augur's Purification
+
+    Rotation Gambit
+    Numerical Reflection: 0
+    Augur's Exaltation
+    Rotation Gambit II
+
+    // check if funct7 should be used
+    {
+        // table 2: opcodes that use funct7
+        // [23, 51, 115]
+        Bookkeeper's Gambit: ---
+    }
+    Flock's Disintegration
+
+    Prospector's Gambit
+    Locator's Distillation
+    Numerical Reflection: 1
+    Additive Distillation
+    Augur's Purification
+
+    Rotation Gambit
+    Numerical Reflection: 0
+    Augur's Exaltation
+    Jester's Gambit
+    Rotation Gambit II
+
+    // lookup index
+    Numerical Reflection: 3
+    Flock's Gambit
+
+    {
+        // table 3: [[opcode, funct3, funct7], ...]
+        // [[55, 0, 0], ..., [99, 0, 0], [99, 0, 1], ...]
+        Bookkeeper's Gambit: ----
+    }
+    Flock's Disintegration
+
+    Jester's Gambit
+    Locator's Distillation
+
+    // load instruction patterns
+    Numerical Reflection: 4 // instruction heap size
+    Identity Reflection
+    Compass' Purification
+    Vector Reflection +Y
+    Additive Distillation
+    Encyclopedist's Exaltation
+
+    // recurse if we have enough meta-evals
+    Numerical Reflection: 2
+    Fisherman's Gambit II
+
+    Thanatos' Reflection
+    Numerical Reflection: 4
+    Maximus Distillation
+    {
+        Combination Distillation
+        Bookkeeper's Gambit: v
+    }
+    Flock's Disintegration
+    Augur's Exaltation
+    Hermes' Gambit
+    
+    // execute instruction
+    Hermes' Gambit
+
+    // update program counter
+    Muninn's Reflection
+    Numerical Reflection: 32
+    Prospector's Gambit
+    Numerical Reflection: 33
+    Selection Distillation
+    Surgeon's Exaltation
+    Huginn's Gambit
+}
