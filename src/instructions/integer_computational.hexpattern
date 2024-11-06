@@ -5,7 +5,7 @@
 
 // register-immediate
 
-#define Instruction 18: ADDI (e) = num, num, num ->
+#define Instruction 18: ADDI = num, num, num ->
 // I-type
 {
     Additive Distillation
@@ -14,7 +14,7 @@
     Write Register
 }
 
-#define Instruction 19: SLTI (e) = num, num, num ->
+#define Instruction 19: SLTI = num, num, num ->
 // I-type
 {
     Convert Unsigned to Signed
@@ -30,7 +30,7 @@
     Write Register
 }
 
-#define Instruction 20: SLTIU (e) = num, num, num ->
+#define Instruction 20: SLTIU = num, num, num ->
 // I-type
 {
     Minimus Distillation
@@ -41,42 +41,42 @@
     Write Register
 }
 
-#define Instruction 21: XORI (e) = num, num, num ->
+#define Instruction 21: XORI = num, num, num ->
 // I-type
 {
     Intersection Distillation
     Write Register
 }
 
-#define Instruction 22: ORI (e) = num, num, num ->
+#define Instruction 22: ORI = num, num, num ->
 // I-type
 {
     Unifying Distillation
     Write Register
 }
 
-#define Instruction 23: ANDI (e) = num, num, num ->
+#define Instruction 23: ANDI = num, num, num ->
 // I-type
 {
     Exclusionary Distillation
     Write Register
 }
 
-#define Instruction 24: SLLI (e) = num, num, num ->
+#define Instruction 24: SLLI = num, num, num ->
 // I-type
 {
     Logical Shift Left
     Write Register
 }
 
-#define Instruction 25: SRLI (e) = num, num, num ->
+#define Instruction 25: SRLI = num, num, num ->
 // I-type
 {
     Logical Shift Right
     Write Register
 }
 
-#define Instruction 26: SRAI (e) = num, num, num ->
+#define Instruction 26: SRAI = num, num, num ->
 // I-type
 {
     Numerical Reflection: 5
@@ -94,7 +94,7 @@
 
 // register-register
 
-#define Instruction 27: ADD (e) = num, num, num ->
+#define Instruction 27: ADD = num, num, num ->
 // R-type
 {
     Additive Distillation
@@ -103,7 +103,7 @@
     Write Register
 }
 
-#define Instruction 28: SUB (e) = num, num, num ->
+#define Instruction 28: SUB = num, num, num ->
 // R-type
 {
     Two's Complement Purification
@@ -113,7 +113,7 @@
     Write Register
 }
 
-#define Instruction 29: SLL (e) = num, num, num ->
+#define Instruction 29: SLL = num, num, num ->
 // R-type
 {
     Numerical Reflection: 5
@@ -122,7 +122,7 @@
     Write Register
 }
 
-#define Instruction 30: SLT (e) = num, num, num ->
+#define Instruction 30: SLT = num, num, num ->
 // R-type
 {
     Convert Unsigned to Signed
@@ -138,7 +138,7 @@
     Write Register
 }
 
-#define Instruction 31: SLTU (e) = num, num, num ->
+#define Instruction 31: SLTU = num, num, num ->
 // R-type
 {
     Minimus Distillation
@@ -149,14 +149,14 @@
     Write Register
 }
 
-#define Instruction 32: XOR (e) = num, num, num ->
+#define Instruction 32: XOR = num, num, num ->
 // R-type
 {
     Exclusionary Distillation
     Write Register
 }
 
-#define Instruction 33: SRL (e) = num, num, num ->
+#define Instruction 33: SRL = num, num, num ->
 // R-type
 {
     Numerical Reflection: 5
@@ -165,7 +165,7 @@
     Write Register
 }
 
-#define Instruction 34: SRA (e) = num, num, num ->
+#define Instruction 34: SRA = num, num, num ->
 // R-type
 {
     Numerical Reflection: 5
@@ -181,7 +181,7 @@
     Write Register
 }
 
-#define Instruction 35: OR (e) = num, num, num ->
+#define Instruction 35: OR = num, num, num ->
 // R-type
 {
     Jester's Gambit
@@ -189,7 +189,7 @@
     Write Register
 }
 
-#define Instruction 36: AND (e) = num, num, num ->
+#define Instruction 36: AND = num, num, num ->
 // R-type
 {
     Jester's Gambit

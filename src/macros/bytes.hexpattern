@@ -1,4 +1,4 @@
-#define Logical Shift Left (e) = num, num -> num
+#define Logical Shift Left = num, num -> num
 // value, bits to shift -> shifted value
 // does not check for overflow
 {
@@ -8,7 +8,7 @@
     Multiplicative Distillation
 }
 
-#define Logical Shift Right (e) = num, num -> num
+#define Logical Shift Right = num, num -> num
 // value, bits to shift -> shifted value
 {
     Numerical Reflection: 2
@@ -18,7 +18,7 @@
     Floor Purification
 }
 
-#define Truncate Integer (e) = num, num -> num
+#define Truncate Integer = num, num -> num
 // value, length in bits -> truncated value
 // eg. truncate(1110_2, 2) = 10
 {
@@ -28,7 +28,7 @@
     Modulus Distillation
 }
 
-#define Split Integer (e) = num, num -> num
+#define Split Integer = num, num -> num
 // value, length in bits -> value[:length], value[length-1:]
 // eg. truncate2(0110_2, 2) = 01, 10
 {
@@ -38,7 +38,7 @@
     Truncate Integer
 }
 
-#define Slice Integer (e) = num, num, num -> num
+#define Slice Integer = num, num, num -> num
 // value, left bound, right bound -> value[left:right]
 // both bounds are inclusive
 // left >= right, eg. num[11:0] is the lower 12 bits of num
@@ -55,7 +55,7 @@
     Truncate Integer
 }
 
-#define Slice Integer II (e) = num, num, num -> num, num
+#define Slice Integer II = num, num, num -> num, num
 // value, left bound, right bound -> value[:left+1], value[left:right]
 {
     Undertaker's Gambit
@@ -70,7 +70,7 @@
     Split Integer
 }
 
-#define Two's Complement Purification (e) = num -> num
+#define Two's Complement Purification = num -> num
 // https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html#whyworks
 {
     Numerical Reflection: 2
@@ -82,7 +82,7 @@
     Truncate Integer
 }
 
-#define Convert Unsigned to Signed (e) = num -> num
+#define Convert Unsigned to Signed = num -> num
 {
     // two's complement numbers are negative if the leftmost bit is 1, ie. >=2^31
     Gemini Decomposition
@@ -100,7 +100,7 @@
     Augur's Exaltation
 }
 
-#define Convert Signed to Unsigned (e) = num -> num
+#define Convert Signed to Unsigned = num -> num
 {
     Gemini Decomposition
     Numerical Reflection: 0
@@ -114,7 +114,7 @@
     Augur's Exaltation
 }
 
-#define Convert Endian (e) = num -> num
+#define Convert Endian = num -> num
 // converts a little endian 32 bit number to big endian
 {
     Numerical Reflection: 8
@@ -139,7 +139,7 @@
     Additive Distillation
 }
 
-#define Extend Sign (e) = num, num -> num
+#define Extend Sign = num, num -> num
 // value, length in bits of value -> sign-extended value
 {
     // sign bit

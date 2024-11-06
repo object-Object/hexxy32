@@ -1,6 +1,6 @@
 #include "./heaps.hexpattern"
 
-#define Load Word (e) = int -> int
+#define Load Word = int -> int
 // address -> word (4 bytes)
 {
     // addresses are byte-aligned, but we store 4 bytes in each index of the heap
@@ -14,7 +14,7 @@
     Encyclopedist's Exaltation
 }
 
-#define Load Byte (e) = int -> int
+#define Load Byte = int -> int
 // address -> byte
 {
     Gemini Decomposition

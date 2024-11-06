@@ -1,7 +1,7 @@
 #include "./bytes.hexpattern"
 #include "./registers.hexpattern"
 
-#define Decode Instruction: R (e) = num -> num, num, num, num
+#define Decode Instruction: R = num -> num, num, num, num
 // instruction -> rd, rs1, rs2
 {
     // rd
@@ -24,7 +24,7 @@
     Read Register
 }
 
-#define Decode Instruction: I (e) = num -> num, num, num
+#define Decode Instruction: I = num -> num, num, num
 // instruction -> rd, rs1, imm
 {
     // rd
@@ -46,7 +46,7 @@
     Extend Sign
 }
 
-#define Decode Instruction: S (e) = num -> num, num, num
+#define Decode Instruction: S = num -> num, num, num
 // instruction -> imm, rs1, rs2
 {
     // imm[4:0]
@@ -83,7 +83,7 @@
     Rotation Gambit II
 }
 
-#define Decode Instruction: B (e) = num -> num, num, num
+#define Decode Instruction: B = num -> num, num, num
 // instruction -> imm, rs1, rs2
 {
     // imm[11] << 11
@@ -141,7 +141,7 @@
     Rotation Gambit II
 }
 
-#define Decode Instruction: U (e) = num -> num, num
+#define Decode Instruction: U = num -> num, num
 // instruction -> rd, imm
 {
     // rd
@@ -155,7 +155,7 @@
     Logical Shift Left
 }
 
-#define Decode Instruction: J (e) = num -> num, num
+#define Decode Instruction: J = num -> num, num
 // instruction -> rd, imm
 {
     // rd
