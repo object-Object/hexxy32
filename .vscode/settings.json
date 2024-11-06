@@ -1,0 +1,15 @@
+{
+    "hex-casting.enabledMods": {
+        "Hex Casting": true,
+        "Hexal": true,
+        "MoreIotas": true,
+        "HexDebug": true,
+        "HexTweaks": false,
+        "HexKinetics": false,
+        "Hexbound": false,
+        "Mediaworks": false,
+        "Hex Gloop": false,
+        "Oneironaut": false,
+        "Hex Keys": false,
+    },
+}
