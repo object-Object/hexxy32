@@ -1,10 +1,14 @@
+CC_DATA_DIR = src/computercraft/loader/data
+
 PROGRAMS = test
 
 all: $(PROGRAMS)
 
-$(PROGRAMS): %: programs/%.bin.json programs/%.bin programs/%.dump
-	mkdir -p src/computercraft/loader/data
-	mv programs/$*.bin.json src/computercraft/loader/data/$*.bin.json
+$(PROGRAMS): %: $(CC_DATA_DIR)/%.bin.json programs/%.bin programs/%.dump
+
+$(CC_DATA_DIR)/%.bin.json: programs/%.bin.json
+	mkdir -p $(CC_DATA_DIR)
+	mv programs/$*.bin.json $(CC_DATA_DIR)/$*.bin.json
 
 %.bin.json: %.bin
 	python3 scripts/dump.py $*.bin > $*.bin.json
@@ -20,4 +24,4 @@ $(PROGRAMS): %: programs/%.bin.json programs/%.bin programs/%.dump
 
 .PHONY: clean
 clean:
-	rm -f **/*.o **/*.bin **/*.bin.json **/*.dump
+	rm -f programs/*.o programs/*.bin programs/*.bin.json programs/*.dump $(CC_DATA_DIR)/*.bin.json
