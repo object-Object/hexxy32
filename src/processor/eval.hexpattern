@@ -9,6 +9,7 @@
         Bookkeeper's Gambit: - <decoders>
     }
     Flock's Disintegration
+    Set Breakpoint After
 
     // get program counter and save tentative next program counter
     Muninn's Reflection
@@ -128,7 +129,13 @@
     Selection Distillation
     
     // decode and execute instruction
+    {
+        Set Breakpoint After // break after decoding
+    }
+    Jester's Gambit
     Additive Distillation
+    Additive Distillation
+    Set Breakpoint After
     Hermes' Gambit
 
     // update program counter
