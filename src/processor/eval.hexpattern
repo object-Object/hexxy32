@@ -27,7 +27,7 @@
 
     // load instruction
     Load Word
-    Convert Endian
+    Swap Endianness
 
     // funct7 (maybe)
     Gemini Decomposition

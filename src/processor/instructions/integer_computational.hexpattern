@@ -1,12 +1,31 @@
 #include "../../macros/bytes.hexpattern"
 #include "../../macros/registers.hexpattern"
 
-// TODO: we can probably just use the same handlers for I and R here, since registers are loaded while decoding
-
 // register-immediate
 
+#define Instruction 0: LUI = num, num ->
+// U-type (rd, imm ->)
+{
+    Numerical Reflection: 12
+    Logical Shift Left
+    Write Register
+}
+
+#define Instruction 1: AUIPC = num, num ->
+// U-type (rd, imm ->)
+{
+    Numerical Reflection: 12
+    Logical Shift Left
+
+    Numerical Reflection: 32  // PC register
+    Read Register
+    Additive Distillation
+
+    Write Register
+}
+
 #define Instruction 18: ADDI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
     Additive Distillation
     Numerical Reflection: 32
@@ -15,11 +34,11 @@
 }
 
 #define Instruction 19: SLTI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
-    Convert Unsigned to Signed
+    Swap Signedness
     Jester's Gambit
-    Convert Unsigned to Signed
+    Swap Signedness
     Jester's Gambit
 
     Minimus Distillation
@@ -31,7 +50,7 @@
 }
 
 #define Instruction 20: SLTIU = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
     Minimus Distillation
     Numerical Reflection: 1
@@ -42,42 +61,42 @@
 }
 
 #define Instruction 21: XORI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
-    Intersection Distillation
+    Exclusionary Distillation
     Write Register
 }
 
 #define Instruction 22: ORI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
     Unifying Distillation
     Write Register
 }
 
 #define Instruction 23: ANDI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
-    Exclusionary Distillation
+    Intersection Distillation
     Write Register
 }
 
 #define Instruction 24: SLLI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
     Logical Shift Left
     Write Register
 }
 
 #define Instruction 25: SRLI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
     Logical Shift Right
     Write Register
 }
 
 #define Instruction 26: SRAI = num, num, num ->
-// I-type
+// I-type (rd, rs1, imm ->)
 {
     Numerical Reflection: 5
     Truncate Integer
@@ -95,104 +114,66 @@
 // register-register
 
 #define Instruction 27: ADD = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Additive Distillation
-    Numerical Reflection: 32
-    Truncate Integer
-    Write Register
+    Instruction 18: ADDI
 }
 
 #define Instruction 28: SUB = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
     Two's Complement Purification
-    Additive Distillation
-    Numerical Reflection: 32
-    Truncate Integer
-    Write Register
+    Instruction 18: ADDI
 }
 
 #define Instruction 29: SLL = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
     Numerical Reflection: 5
     Truncate Integer
-    Logical Shift Left
-    Write Register
+    Instruction 24: SLLI
 }
 
 #define Instruction 30: SLT = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Convert Unsigned to Signed
-    Jester's Gambit
-    Convert Unsigned to Signed
-    Jester's Gambit
-
-    Minimus Distillation
-    Numerical Reflection: 1
-    Numerical Reflection: 0
-    Augur's Exaltation
-
-    Write Register
+    Instruction 19: SLTI
 }
 
 #define Instruction 31: SLTU = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Minimus Distillation
-    Numerical Reflection: 1
-    Numerical Reflection: 0
-    Augur's Exaltation
-
-    Write Register
+    Instruction 20: SLTIU
 }
 
 #define Instruction 32: XOR = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Exclusionary Distillation
-    Write Register
+    Instruction 21: XORI
 }
 
 #define Instruction 33: SRL = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
     Numerical Reflection: 5
     Truncate Integer
-    Logical Shift Right
-    Write Register
+    Instruction 25: SRLI
 }
 
 #define Instruction 34: SRA = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Numerical Reflection: 5
-    Truncate Integer
-    Undertaker's Gambit
-    Logical Shift Right
-
-    Numerical Reflection: 32
-    Rotation Gambit
-    Subtractive Distillation
-    Extend Sign
-
-    Write Register
+    Instruction 26: SRAI
 }
 
 #define Instruction 35: OR = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Jester's Gambit
-    Unifying Distillation
-    Write Register
+    Instruction 22: ORI
 }
 
 #define Instruction 36: AND = num, num, num ->
-// R-type
+// R-type (rd, rs1, rs2 ->)
 {
-    Jester's Gambit
-    Intersection Distillation
-    Write Register
+    Instruction 23: ANDI
 }

@@ -1,7 +1,9 @@
 #include "../macros/bytes.hexpattern"
 #include "../macros/registers.hexpattern"
 
-#define Decode Instruction: R = num -> num, num, num, num
+// note: all decoders with input registers load the register value in the process of decoding
+
+#define Decode Instruction: R = num -> num, num, num
 // instruction -> rd, rs1, rs2
 {
     // rd

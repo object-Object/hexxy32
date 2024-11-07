@@ -82,39 +82,25 @@
     Truncate Integer
 }
 
-#define Convert Unsigned to Signed = num -> num
+#define Swap Signedness (NORTH_EAST aawddeqdeddw) = num -> num
+// implementation by Aly
 {
-    // two's complement numbers are negative if the leftmost bit is 1, ie. >=2^31
+    // s2u(x) = x - 2(x - mod(x + 2^31, 2^31))
     Gemini Decomposition
     Numerical Reflection: 2
     Numerical Reflection: 31
     Power Distillation
-    Maximus Distillation
-
-    Prospector's Gambit
-    Two's Complement Purification
-    Numerical Reflection: -1
+    Dioscuri Gambit
+    Additive Distillation
+    Jester's Gambit
+    Modulus Distillation
+    Subtractive Distillation
+    Numerical Reflection: 2
     Multiplicative Distillation
-
-    Rotation Gambit
-    Augur's Exaltation
+    Subtractive Distillation
 }
 
-#define Convert Signed to Unsigned = num -> num
-{
-    Gemini Decomposition
-    Numerical Reflection: 0
-    Minimus Distillation
-
-    Prospector's Gambit
-    Length Purification
-    Two's Complement Purification
-
-    Rotation Gambit
-    Augur's Exaltation
-}
-
-#define Convert Endian (NORTH_EAST aawddeeaqaa) = num -> num
+#define Swap Endianness (NORTH_EAST aawddeeaqaa) = num -> num
 // converts a little endian 32 bit number to big endian, or vice versa
 {
     Numerical Reflection: 8
