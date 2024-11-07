@@ -1,4 +1,5 @@
 local NUM_TX_CHUNKS = 32
+local CHUNK_SIZE = 512
 
 local focalLink = assert(peripheral.wrap("top"), "Expected focal link on top of computer")
 ---@cast focalLink FocalLink
@@ -28,6 +29,7 @@ local function sendChunk(luaIndex)
     for i = luaIndex, luaIndex + NUM_TX_CHUNKS - 1 do
         if i > #data then break end
         print("Sending chunk: "..fmtChunk(i))
+        assert(#data[i] == CHUNK_SIZE, "Invalid chunk: expected "..CHUNK_SIZE.." elements but got "..#data[i])
         focalLink.sendIota(0, {data[i], i - 1})
     end
     focalLink.sendIota(0, {true})
