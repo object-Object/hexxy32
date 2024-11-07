@@ -26,6 +26,7 @@ end
 
 ---@param luaIndex number
 local function sendChunk(luaIndex)
+    if focalLink.numLinked() == 0 then return end
     for i = luaIndex, luaIndex + NUM_TX_CHUNKS - 1 do
         if i > #data then break end
         print("Sending chunk: "..fmtChunk(i))
