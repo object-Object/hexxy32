@@ -43,7 +43,6 @@ local handlers = {
     received_iota = function()
         local hexIndex = focalLink.receiveIota() -- last index successfully written by the wisp
         if type(hexIndex) == "table" then
-            pretty.pretty_print(hexIndex)
             print("Wisp reset, continuing from last successful chunk: "..fmtChunk(lastSuccessfulLuaIndex))
         elseif type(hexIndex) == "number" then
             lastSuccessfulLuaIndex = hexIndex + 1
