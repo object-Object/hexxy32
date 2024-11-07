@@ -2,56 +2,72 @@
 #include "../../macros/heaps.hexpattern"
 
 {
-    {
+    Consideration: {
         {
             // drop dummy iota
             Bookkeeper's Gambit: v
 
-            // rx packet format: [data, index]
+            // rx packet format: [data, index] | [true]
             Recitation Reflection
             Flock's Disintegration
-            
-            // get focus position
-            Gemini Decomposition
-            Numerical Reflection: 22
-            Cubic Index Distillation
-            Numerical Reflection: 22
-            Locate Heap
-            Additive Distillation
-            
-            // write data
-            Rotation Gambit
-            Ritualist's Gambit
 
-            // print written index for debugging, then save it to send later
-            Reveal
-            Huginn's Gambit
+            // if packet is a single true iota, send the last successfully written index
+            // otherwise write this chunk to the specified index
+            Gemini Decomposition
+            True Reflection
+            Equality Distillation
+            {
+                Bookkeeper's Gambit: v
+                Numerical Reflection: 0
+                Muninn's Reflection
+                Send Iota
+            }
+            {
+                // get focus position
+                Gemini Decomposition
+                Numerical Reflection: 22
+                Cubic Index Distillation
+                Numerical Reflection: 22
+                Locate Heap
+                Additive Distillation
+                
+                // write data
+                Rotation Gambit
+                Ritualist's Gambit
+
+                // print written index for debugging, then save it to send later
+                Reveal
+                Huginn's Gambit
+            }
+            Augur's Exaltation
+            Hermes' Gambit
         }
 
-        // iterate once for each iota in the queue
+        // if we received iotas, iterate once for each iota in the queue
+        // else send null to tell the computer we just connected
         Postmaster's Reflection
-        Numerical Reflection: 1  // in case there are 0 queued iotas
-        Additive Distillation
         Gemini Decomposition
-        Gemini Gambit
-        Gemini Decomposition
-        Flock's Gambit
-        Speaker's Decomposition
-        Bookkeeper's Gambit: v
+        Augur's Purification
+        {
+            Gemini Decomposition
+            Gemini Gambit
+            Gemini Decomposition
+            Flock's Gambit
 
-        Thoth's Gambit
-        Bookkeeper's Gambit: v
-        
-        // send last successful index to the computer, or null if the wisp just spawned
-        Numerical Reflection: 0
-        Muninn's Reflection
-        Send Iota
-        
-        Nullary Reflection
-        Huginn's Gambit
+            Thoth's Gambit
+            Bookkeeper's Gambit: v
+        }
+        {
+            Bookkeeper's Gambit: v
+            Numerical Reflection: 0
+            Nullary Reflection
+            Send Iota
+        }
+        Augur's Exaltation
+        Hermes' Gambit
 
         Listen
-    }
+    Consideration: }
 
     Mind's Reflection
     Compass' Purification

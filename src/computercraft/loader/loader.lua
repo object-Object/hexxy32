@@ -18,12 +18,19 @@ assert(type(data) == "table", "Invalid file, expected table: "..filename)
 assert(#data > 0, "Invalid file, expected array with at least one element: "..filename)
 
 ---@param luaIndex number
+---@return string
+local function fmtChunk(luaIndex)
+    return (luaIndex-1).." ("..luaIndex.."/"..#data..")"
+end
+
+---@param luaIndex number
 local function sendChunk(luaIndex)
     for i = luaIndex, luaIndex + NUM_TX_CHUNKS - 1 do
         if i > #data then break end
-        print("Sending chunk: "..i.."/"..#data)
+        print("Sending chunk: "..fmtChunk(i))
         focalLink.sendIota(0, {data[i], i - 1})
     end
+    focalLink.sendIota(0, {true})
 end
 
 local lastSuccessfulLuaIndex = 0
@@ -34,10 +41,10 @@ local handlers = {
         local hexIndex = focalLink.receiveIota() -- last index successfully written by the wisp
         if type(hexIndex) == "table" then
             pretty.pretty_print(hexIndex)
-            print("Wisp reset, continuing from last successful chunk: "..lastSuccessfulLuaIndex.."/"..#data)
+            print("Wisp reset, continuing from last successful chunk: "..fmtChunk(lastSuccessfulLuaIndex))
         elseif type(hexIndex) == "number" then
             lastSuccessfulLuaIndex = hexIndex + 1
-            print("Wisp successfully wrote chunk: "..lastSuccessfulLuaIndex.."/"..#data)
+            print("Wisp successfully wrote chunk: "..fmtChunk(lastSuccessfulLuaIndex))
         else
             print("Ignoring unexpected iota: "..hexIndex)
             return
