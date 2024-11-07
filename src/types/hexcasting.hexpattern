@@ -1,3 +1,5 @@
 // TODO: replace with names of actual r/w block patterns when added
 #define Ritualist's Purification = vec -> any
 #define Ritualist's Gambit = vec, any ->
+
+#define Iris' Gambit = [pattern] | pattern -> many

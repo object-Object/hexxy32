@@ -18,5 +18,6 @@
     },
     "files.associations": {
         "*.s": "riscv"
-    }
+    },
+    "makefile.configureOnOpen": false
 }

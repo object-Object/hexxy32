@@ -1,0 +1,71 @@
+#include "../../types/hexcasting.hexpattern"
+#include "../../macros/heaps.hexpattern"
+
+{
+    {
+        {
+            // drop dummy iota
+            Bookkeeper's Gambit: v
+
+            // rx packet format: [data, index]
+            Recitation Reflection
+            Flock's Disintegration
+            
+            // get focus position
+            Gemini Decomposition
+            Numerical Reflection: 22
+            Cubic Index Distillation
+            Numerical Reflection: 22
+            Locate Heap
+            Additive Distillation
+            
+            // write data
+            Rotation Gambit
+            Ritualist's Gambit
+
+            // print written index for debugging, then save it to send later
+            Reveal
+            Huginn's Gambit
+        }
+
+        // iterate once for each iota in the queue
+        Postmaster's Reflection
+        Numerical Reflection: 1  // in case there are 0 queued iotas
+        Additive Distillation
+        Gemini Decomposition
+        Gemini Gambit
+        Gemini Decomposition
+        Flock's Gambit
+        Speaker's Decomposition
+        Bookkeeper's Gambit: v
+
+        Thoth's Gambit
+        Bookkeeper's Gambit: v
+        
+        // send last successful index to the computer, or null if the wisp just spawned
+        Numerical Reflection: 0
+        Muninn's Reflection
+        Send Iota
+        
+        Nullary Reflection
+        Huginn's Gambit
+
+        Listen
+    }
+
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Archer's Distillation
+
+    Undertaker's Gambit
+    Undertaker's Gambit
+
+    Numerical Reflection: 100
+    Summon Cyclic Wisp
+
+    Entity Purification: Wisp
+    Link Others
+}
+Link
