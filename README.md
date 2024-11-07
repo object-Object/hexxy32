@@ -2,7 +2,7 @@
 
 A RISC-V (`rv32i`) computer implemented in Hex Casting. Heavily WIP.
 
-![](https://i.imgur.com/0LUewBC.png)
+![](./media/2024-11-06_23-07-20.mp4)
 
 ## Data representation
 
