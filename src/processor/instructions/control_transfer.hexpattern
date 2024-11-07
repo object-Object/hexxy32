@@ -1,0 +1,122 @@
+#include "../../macros/bytes.hexpattern"
+#include "../../macros/registers.hexpattern"
+
+// unconditional jumps
+
+#define Instruction 2: JAL = num, num ->
+// J-type (rd, imm ->)
+{
+    // set next PC to PC + offset
+    Numerical Reflection: 32  // PC
+    Read Register
+    Undertaker's Gambit
+    Additive Distillation
+
+    Numerical Reflection: 33  // next PC
+    Jester's Gambit
+    Write Register
+    
+    // set rd to PC + 4
+    Numerical Reflection: 4
+    Additive Distillation
+    Write Register
+}
+
+#define Instruction 3: JALR = num, num, num ->
+// I-type (rd, rs1, imm ->)
+{
+    // rs1 + imm
+    Additive Distillation
+    
+    // set least significant bit to 0
+    Numerical Reflection: 2
+    Division Distillation
+    Floor Purification
+    Numerical Reflection: 2
+    Multiplicative Distillation
+
+    // set next PC
+    Numerical Reflection: 33  // next PC
+    Jester's Gambit
+    Write Register
+
+    // set rd to PC + 4
+    Numerical Reflection: 32  // PC
+    Read Register
+    Numerical Reflection: 4
+    Additive Distillation
+    Write Register
+}
+
+// conditional branches
+
+#define Instruction 4: BEQ = num, num, num ->
+// B-type (imm, rs1, rs2 ->)
+{
+    Equality Distillation
+    Branch If True
+}
+
+#define Instruction 5: BNE = num, num, num ->
+// B-type (imm, rs1, rs2 ->)
+{
+    Inequality Distillation
+    Branch If True
+}
+
+#define Instruction 6: BLT = num, num, num ->
+// B-type (imm, rs1, rs2 ->)
+{
+    Swap Signedness
+    Jester's Gambit
+    Swap Signedness
+    Jester's Gambit
+    Minimus Distillation
+    Branch If True
+}
+
+#define Instruction 7: BGE = num, num, num ->
+// B-type (imm, rs1, rs2 ->)
+{
+    Swap Signedness
+    Jester's Gambit
+    Swap Signedness
+    Jester's Gambit
+    Maximus Distillation II
+    Branch If True
+}
+
+#define Instruction 8: BLTU = num, num, num ->
+// B-type (imm, rs1, rs2 ->)
+{
+    Minimus Distillation
+    Branch If True
+}
+
+#define Instruction 9: BGEU = num, num, num ->
+// B-type (imm, rs1, rs2 ->)
+{
+    Maximus Distillation II
+    Branch If True
+}
+
+#define Branch If True = num, bool ->
+// imm, condition ->
+// helper macro for conditional branches (big if true)
+{
+    {
+        // if false
+        Bookkeeper's Gambit: v
+        
+        // if true
+        Numerical Reflection: 32  // PC
+        Read Register
+        Additive Distillation
+        Numerical Reflection: 33  // next PC
+        Jester's Gambit
+        Write Register
+    }
+    Speaker's Decomposition
+    Augur's Exaltation
+    Hermes' Gambit
+}

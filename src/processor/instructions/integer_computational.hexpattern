@@ -6,21 +6,15 @@
 #define Instruction 0: LUI = num, num ->
 // U-type (rd, imm ->)
 {
-    Numerical Reflection: 12
-    Logical Shift Left
     Write Register
 }
 
 #define Instruction 1: AUIPC = num, num ->
 // U-type (rd, imm ->)
 {
-    Numerical Reflection: 12
-    Logical Shift Left
-
     Numerical Reflection: 32  // PC register
     Read Register
     Additive Distillation
-
     Write Register
 }
 
