@@ -1,4 +1,4 @@
-#define Read Register = num -> num
+#define Read Register (EAST aqqqqqeadeqa) = num -> num
 // index -> value
 {
     Gemini Decomposition
@@ -12,7 +12,7 @@
     Augur's Exaltation
 }
 
-#define Write Register = num, num ->
+#define Write Register (EAST deeeeeqadeqa) = num, num ->
 // index, value ->
 {
     Prospector's Gambit

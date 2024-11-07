@@ -139,7 +139,7 @@
     Additive Distillation
 }
 
-#define Extend Sign = num, num -> num
+#define Extend Sign (NORTH_WEST qqqqqaweaqdee) = num, num -> num
 // value, length in bits of value -> sign-extended value
 {
     // sign bit
@@ -158,6 +158,7 @@
     Multiplicative Distillation
 
     // (extended sign << len) + value
+    Jester's Gambit
     Logical Shift Left
     Additive Distillation
 }
