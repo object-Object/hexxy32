@@ -64,8 +64,8 @@ end
 
 -- main loop
 
+focalLink.clearReceivedIotas()
 if focalLink.numLinked() > 0 then
-    focalLink.clearReceivedIotas()
     sendChunk(1)
 else
     print("Waiting for wisp to connect...")
