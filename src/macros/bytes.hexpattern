@@ -140,22 +140,28 @@
 }
 
 #define Extend Sign (NORTH_WEST qqqqqaweaqdee) = num, num -> num
-// value, length in bits of value -> sign-extended value
+// value, length in bits of value -> sign-extended 32-bit value
 {
     // sign bit
     Dioscuri Gambit
     Numerical Reflection: 1
     Subtractive Distillation
     Logical Shift Right
+    Augur's Purification
 
-    // 2^(32-len) * sign
+    // 2^(32-len) - 1, ie. 1111...1 bitmask of length (32 - len)
     Prospector's Gambit
     Numerical Reflection: 2
     Numerical Reflection: 32
     Rotation Gambit
     Subtractive Distillation
     Power Distillation
-    Multiplicative Distillation
+    Numerical Reflection: 1
+    Subtractive Distillation
+    
+    // or 0, if the sign bit is 0
+    Numerical Reflection: 0
+    Augur's Exaltation
 
     // (extended sign << len) + value
     Jester's Gambit
