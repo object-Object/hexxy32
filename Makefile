@@ -1,10 +1,13 @@
-all: programs/test.bin
+all: programs/test.bin programs/test.dump
 
 %.bin: %.o
 	riscv64-unknown-elf-objcopy -O binary $*.o $*.bin
 
-%.o: %.asm
-	clang --target=riscv32 -march=rv32i $*.asm -c -o $*.o
+%.dump: %.o
+	riscv64-unknown-elf-objdump -d $*.o > $*.dump
+
+%.o: %.s
+	clang --target=riscv32 -march=rv32i $*.s -c -o $*.o
 
 clean:
-	rm -f **/*.o **/*.bin
+	rm -f **/*.o **/*.bin **/*.dump

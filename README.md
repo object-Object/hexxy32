@@ -26,14 +26,15 @@ Positions are relative to the block where the processor is executed (ie. where t
 
 | Y offset | Value                                |
 | -------- | ------------------------------------ |
-| +2       | instructions                         |
+| +3       | decoders (see spreadsheet)           |
+| +2       | instructions (see spreadsheet)       |
 | +1       | [startup, shutdown, eval, bootstrap] |
 | 0        | N/A                                  |
 | -1       | ravenmind state                      |
 
 ### Memory
 
-TODO
+Main memory is represented as a 22x22x22 cube of focus holders (from HexDebug), each containing a list of 512 number iotas. A greater sentinel is spawned at the center of the cube.
 
 ## Requirements
 

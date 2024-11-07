@@ -18,14 +18,7 @@
 // address -> byte
 {
     Gemini Decomposition
-    Numerical Reflection: 4
-    Division Distillation
-    Floor Purification
-    
-    Numerical Reflection: 22 // heap size
-    Gemini Decomposition
-    Locate Heap
-    Encyclopedist's Exaltation
+    Load Word
 
     // 2^((address % 4) * 8)
     Numerical Reflection: 2

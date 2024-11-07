@@ -14,11 +14,23 @@
     Ritualist's Purification
     
     Surgeon's Exaltation
+
+    // load and inject instruction type decoders into eval
+    Numerical Reflection: 2
     
+    Numerical Reflection: 4
+    Fisherman's Gambit II
+    Vector Reflection +Y
+    Numerical Reflection: 3
+    Multiplicative Distillation
+    Additive Distillation
+    Ritualist's Purification
+    
+    Surgeon's Exaltation
+    
+    // inject processor pos into startup and shutdown
     Numerical Reflection: -3
     Fisherman's Gambit
-
-    // inject processor pos into startup and shutdown
     Rotation Gambit
     Undertaker's Gambit
     

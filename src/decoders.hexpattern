@@ -1,5 +1,5 @@
-#include "./bytes.hexpattern"
-#include "./registers.hexpattern"
+#include "./macros/bytes.hexpattern"
+#include "./macros/registers.hexpattern"
 
 #define Decode Instruction: R = num -> num, num, num, num
 // instruction -> rd, rs1, rs2
@@ -72,7 +72,7 @@
     Jester's Gambit
     Numerical Reflection: 5
     Logical Shift Left
-    Numerical Reflection: 4
+    Numerical Reflection: 3
     Fisherman's Gambit
     Additive Distillation
 
