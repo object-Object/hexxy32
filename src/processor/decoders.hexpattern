@@ -1,5 +1,5 @@
-#include "./macros/bytes.hexpattern"
-#include "./macros/registers.hexpattern"
+#include "../macros/bytes.hexpattern"
+#include "../macros/registers.hexpattern"
 
 #define Decode Instruction: R = num -> num, num, num, num
 // instruction -> rd, rs1, rs2

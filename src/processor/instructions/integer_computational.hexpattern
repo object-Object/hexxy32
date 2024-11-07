@@ -1,5 +1,5 @@
-#include "../macros/bytes.hexpattern"
-#include "../macros/registers.hexpattern"
+#include "../../macros/bytes.hexpattern"
+#include "../../macros/registers.hexpattern"
 
 // TODO: we can probably just use the same handlers for I and R here, since registers are loaded while decoding
 
