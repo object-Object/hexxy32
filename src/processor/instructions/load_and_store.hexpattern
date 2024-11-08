@@ -1,0 +1,61 @@
+#include "../../macros/bytes.hexpattern"
+#include "../../macros/memory.hexpattern"
+#include "../../macros/registers.hexpattern"
+
+// load
+
+#define Instruction 10: LB = num, num, num ->
+// I-type (dest, base, offset ->)
+{
+
+}
+
+#define Instruction 11: LH = num, num, num ->
+// I-type (dest, base, offset ->)
+{
+
+}
+
+#define Instruction 12: LW = num, num, num ->
+// I-type (dest, base, offset ->)
+{
+    Additive Distillation
+    Load Word
+    Swap Endianness
+    Write Register
+}
+
+#define Instruction 13: LBU = num, num, num ->
+// I-type (dest, base, offset ->)
+{
+
+}
+
+#define Instruction 14: LHU = num, num, num ->
+// I-type (dest, base, offset ->)
+{
+
+}
+
+// store
+
+#define Instruction 15: SB = num, num, num ->
+// S-type (src, base, offset ->)
+{
+
+}
+
+#define Instruction 16: SH = num, num, num ->
+// S-type (src, base, offset ->)
+{
+
+}
+
+#define Instruction 17: SW = num, num, num ->
+// S-type (src, base, offset ->)
+{
+    Additive Distillation
+    Jester's Gambit
+    Swap Endianness
+    Store Word
+}

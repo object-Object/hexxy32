@@ -1,6 +1,6 @@
 #include "./heaps.hexpattern"
 
-#define Load Word = int -> int
+#define Load Word (EAST aqqqqqdaqaawaa) = int -> int
 // address -> word (4 bytes)
 {
     // addresses are byte-aligned, but we store 4 bytes in each index of the heap
@@ -35,4 +35,10 @@
 
     Numerical Reflection: 256 // 2^8
     Modulus Distillation
+}
+
+#define Store Word = int, int ->
+// address, word (4 bytes) ->
+{
+
 }

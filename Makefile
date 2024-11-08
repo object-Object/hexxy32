@@ -1,6 +1,6 @@
 CC_DATA_DIR = src/computercraft/loader/data
 
-PROGRAMS = test
+PROGRAMS = test load
 
 all: $(PROGRAMS)
 
