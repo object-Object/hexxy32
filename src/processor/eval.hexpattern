@@ -1,12 +1,14 @@
 #include "../macros/bytes.hexpattern"
 #include "../macros/heaps.hexpattern"
 #include "../macros/memory.hexpattern"
+#include "../macros/registers.hexpattern"
 
 {
     // data injected during bootstrap
     {
-        Bookkeeper's Gambit: - <instruction handlers>
-        Bookkeeper's Gambit: - <decoders>
+        Bookkeeper's Gambit: - // trap handlers
+        Bookkeeper's Gambit: - // instruction handlers
+        Bookkeeper's Gambit: - // decoders
     }
     Flock's Disintegration
     Set Breakpoint After
@@ -136,6 +138,26 @@
     Additive Distillation
     Additive Distillation
     Set Breakpoint After
+    Hermes' Gambit
+
+    // handle traps
+    Numerical Reflection: 34
+    Read Register
+    Gemini Decomposition
+    Augur's Purification
+    {
+        // if falsy
+        Bookkeeper's Gambit: vv
+
+        // if truthy
+        Speaker's Decomposition
+        Rotation Gambit
+        Jester's Gambit
+        Selection Distillation
+        Hermes' Gambit
+    }
+    Speaker's Decomposition
+    Augur's Exaltation
     Hermes' Gambit
 
     // update program counter

@@ -1,0 +1,69 @@
+#define Handle Trap: Contained = list ->
+{
+    // TODO: implement
+    Bookkeeper's Gambit: v
+}
+
+#define Handle Trap: Requested = list ->
+{
+    // TODO: implement
+    Bookkeeper's Gambit: v
+}
+
+#define Handle Trap: Invisible = list ->
+{
+    // TODO: implement
+    Bookkeeper's Gambit: v
+}
+
+#define Handle Trap: Fatal = list ->
+// [error message] ->
+{
+    {
+        <"Fatal trap encountered. The processor will now terminate.">
+        <"Error message:">
+    }
+    Jester's Gambit
+    Additive Distillation
+
+    {
+        <"Registers:">
+    }
+    Additive Distillation
+    Muninn's Reflection
+    Undertaker's Gambit
+    Numerical Reflection: 0
+    Numerical Reflection: 32
+    Selection Exaltation
+    Integration Distillation
+
+    {
+        <"Current PC:">
+    }
+    Additive Distillation
+    Prospector's Gambit
+    Numerical Reflection: 33
+    Selection Distillation
+    Integration Distillation
+
+    {
+        <"Next PC:">
+    }
+    Additive Distillation
+    Prospector's Gambit
+    Numerical Reflection: 34
+    Selection Distillation
+    Integration Distillation
+    
+    // print error message
+    {
+        Reveal
+    }
+    Jester's Gambit
+    Thoth's Gambit
+    Bookkeeper's Gambit: v
+    
+    // mishap to stop execution
+    Numerical Reflection: 0
+    Flock's Disintegration
+}

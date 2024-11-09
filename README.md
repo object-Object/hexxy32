@@ -17,6 +17,19 @@ Registers are stored in the [ravenmind](https://hexcasting.hexxy.media/v/0.11.1-
 | 0-31  | Normal registers |
 | 32    | Current `pc`     |
 | 33    | Next `pc`        |
+| 34    | Trap message     |
+
+### Exceptions/interrupts
+
+Exceptions and interrupts can trigger traps by setting index 34 of the ravenmind to specific values. The format is as follows:
+
+| Type           | Value                |
+| -------------- | -------------------- |
+| Default value  | `0`                  |
+| Contained trap | `[0, ...payload]`    |
+| Requested trap | `[1, ...payload]`    |
+| Invisible trap | `[2, ...payload]`    |
+| Fatal trap     | `[3, error message]` |
 
 ## Physical layout
 
@@ -26,6 +39,7 @@ Positions are relative to the block where the processor is executed (ie. where t
 
 | Y offset | Value                                |
 | -------- | ------------------------------------ |
+| +4       | trap handlers                        |
 | +3       | decoders (see spreadsheet)           |
 | +2       | instructions (see spreadsheet)       |
 | +1       | [startup, shutdown, eval, bootstrap] |
@@ -35,6 +49,12 @@ Positions are relative to the block where the processor is executed (ie. where t
 ### Memory
 
 Main memory is represented as a 22x22x22 cube of focus holders (from HexDebug), each containing a list of 512 number iotas. A greater sentinel is spawned at the center of the cube.
+
+## Implementation notes
+
+### Misaligned loads/stores
+
+Misaligned loads and stores are currently not supported, and will raise a fatal exception if attempted.
 
 ## Requirements
 

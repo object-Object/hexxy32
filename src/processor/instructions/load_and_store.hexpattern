@@ -1,6 +1,7 @@
 #include "../../macros/bytes.hexpattern"
 #include "../../macros/memory.hexpattern"
 #include "../../macros/registers.hexpattern"
+#include "../../macros/traps.hexpattern"
 
 // load
 
@@ -20,9 +21,31 @@
 // I-type (dest, base, offset ->)
 {
     Additive Distillation
-    Load Word
-    Swap Endianness
-    Write Register
+    Gemini Decomposition
+    Numerical Reflection: 4
+    Modulus Distillation
+    Augur's Purification
+    {
+        {
+            <"LW instruction attempted misaligned load (expected multiple of 4).">
+            <"Memory address:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        {
+            <"Destination register:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Load Word
+        Swap Endianness
+        Write Register
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 }
 
 #define Instruction 13: LBU = num, num, num ->

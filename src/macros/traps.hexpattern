@@ -1,0 +1,11 @@
+#include "./registers.hexpattern"
+
+#define Raise Exception: Fatal = [many] ->
+// [error message, ...] ->
+{
+    Numerical Reflection: 3  // fatal trap code
+    Speaker's Distillation
+    Numerical Reflection: 34  // trap message register
+    Jester's Gambit
+    Write Register
+}
