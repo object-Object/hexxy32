@@ -1,10 +1,11 @@
-#include "../macros/bytes.hexpattern"
-#include "../macros/heaps.hexpattern"
-#include "../macros/memory.hexpattern"
-#include "../macros/registers.hexpattern"
+#include "../../macros/bytes.hexpattern"
+#include "../../macros/heaps.hexpattern"
+#include "../../macros/memory.hexpattern"
+#include "../../macros/registers.hexpattern"
 
 {
     // data injected during bootstrap
+    // TODO: we may eventually run into stack size issues when loading instructions, if these get larger than ~512 iotas total
     {
         Bookkeeper's Gambit: - // trap handlers
         Bookkeeper's Gambit: - // instruction handlers

@@ -1,4 +1,4 @@
-#include "../types/hexcasting.hexpattern"
+#include "../../types/hexcasting.hexpattern"
 
 {
     // processor pos (injected during bootstrap)
