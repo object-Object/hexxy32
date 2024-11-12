@@ -1,6 +1,6 @@
 CC_DATA_DIR = src/computercraft/loader/data
 
-PROGRAMS = test load
+PROGRAMS = $(patsubst programs/%.s,%,$(wildcard programs/*.s))
 
 all: $(PROGRAMS)
 
