@@ -4,14 +4,6 @@
 #include "../../macros/registers.hexpattern"
 
 {
-    // data injected during bootstrap
-    // TODO: we may eventually run into stack size issues when loading instructions, if these get larger than ~512 iotas total
-    {
-        Bookkeeper's Gambit: - // trap handlers
-        Bookkeeper's Gambit: - // instruction handlers
-        Bookkeeper's Gambit: - // decoders
-    }
-    Flock's Disintegration
     Set Breakpoint After
 
     // get program counter and save tentative next program counter
@@ -108,7 +100,10 @@
     Locator's Distillation
 
     // get instruction type decoder
-    Rotation Gambit
+    {
+        Bookkeeper's Gambit: -- // bootstrap injection target
+    }
+    Flock's Disintegration
     Prospector's Gambit
 
     {
@@ -122,8 +117,10 @@
     Selection Distillation
     
     // get instruction handler
-    Numerical Reflection: 3
-    Fisherman's Gambit
+    {
+        Bookkeeper's Gambit: --- // bootstrap injection target
+    }
+    Flock's Disintegration
     Rotation Gambit
     Selection Distillation
     
@@ -144,11 +141,14 @@
     Augur's Purification
     {
         // if falsy
-        Bookkeeper's Gambit: vv
+        Bookkeeper's Gambit: v
 
         // if truthy
         Speaker's Decomposition
-        Rotation Gambit
+        {
+            Bookkeeper's Gambit: ---- // bootstrap injection target (trap handlers)
+        }
+        Flock's Disintegration
         Jester's Gambit
         Selection Distillation
         Hermes' Gambit

@@ -6,26 +6,31 @@
     Huginn's Gambit
     {
         Bookkeeper's Gambit: vv-
+        Flock's Disintegration
+
+        // injection index
         Muninn's Reflection
         Jester's Gambit
-        Flock's Disintegration
-        
+        Locator's Distillation
+        Rotation Gambit II
+
         // y offset + processor pos
         Vector Reflection +Y
         Multiplicative Distillation
-        Numerical Reflection: 3
-        Fisherman's Gambit
         Additive Distillation
         Ritualist's Purification
 
+        // insert data
+        Muninn's Reflection
+        Rotation Gambit II
         Surgeon's Exaltation
         Huginn's Gambit
     }
     {
-        // [injection index, y offset]
-        <[1, 4]> // trap handlers
-        <[2, 2]> // instruction handlers
-        <[3, 3]> // decoders
+        // [y offset, injection target]
+        <[4, Bookkeeper's Gambit: ----]> // trap handlers
+        <[3, Bookkeeper's Gambit: --]> // decoders
+        <[2, Bookkeeper's Gambit: ---]> // instruction handlers
     }
     Thoth's Gambit
     Bookkeeper's Gambit: v
