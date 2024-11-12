@@ -8,6 +8,22 @@
     Mind's Reflection
     Alidade's Purification
     Archer's Distillation
+
+    // if sneaking, reset processor state
+    Mind's Reflection
+    Stadiometer's Purification
+    Numerical Reflection: 1.5
+    Maximus Distillation
+    Vacant Reflection
+    {
+        Gemini Decomposition
+        Vector Reflection -Y
+        Additive Distillation
+        Nullary Reflection
+        Ritualist's Gambit
+    }
+    Augur's Exaltation
+    Hermes' Gambit
     
     // bootstrap processor code
     Gemini Decomposition
@@ -33,7 +49,7 @@
     Alidade's Purification
     Archer's Distillation
 
-    // reset ravenmind
+    // reset processor state
     Vector Reflection -Y
     Additive Distillation
     Nullary Reflection
