@@ -25,13 +25,13 @@ Registers are stored in the [ravenmind](https://hexcasting.hexxy.media/v/0.11.1-
 
 Exceptions and interrupts can trigger traps by setting index 34 of the ravenmind to specific values. The format is as follows:
 
-| Type           | Value                |
-| -------------- | -------------------- |
-| Default value  | `0`                  |
-| Contained trap | `[0, ...payload]`    |
-| Requested trap | `[1, ...payload]`    |
-| Invisible trap | `[2, ...payload]`    |
-| Fatal trap     | `[3, error message]` |
+| Type           | Value                         |
+| -------------- | ----------------------------- |
+| Default value  | `0`                           |
+| Contained trap | `[0, ...payload]`             |
+| Requested trap | `[1, ...payload]`             |
+| Invisible trap | `[2, ...payload]`             |
+| Fatal trap     | `[3, ...error message lines]` |
 
 ## Physical layout
 

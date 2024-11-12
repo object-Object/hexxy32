@@ -1,6 +1,6 @@
 #include "./registers.hexpattern"
 
-#define Raise Exception: Fatal = [many] ->
+#define Raise Exception: Fatal (SOUTH_WEST aqdeddedwd) = [many] ->
 // [error message, ...] ->
 {
     Numerical Reflection: 3  // fatal trap code

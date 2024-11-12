@@ -42,7 +42,7 @@
     }
     Additive Distillation
     Prospector's Gambit
-    Numerical Reflection: 33
+    Numerical Reflection: 32
     Selection Distillation
     Integration Distillation
 
@@ -50,8 +50,8 @@
         <"Next PC:">
     }
     Additive Distillation
-    Prospector's Gambit
-    Numerical Reflection: 34
+    Jester's Gambit
+    Numerical Reflection: 33
     Selection Distillation
     Integration Distillation
     
@@ -64,6 +64,9 @@
     Bookkeeper's Gambit: v
     
     // mishap to stop execution
-    Numerical Reflection: 0
-    Flock's Disintegration
+    {
+        Set Breakpoint After
+        <"Terminating execution.">
+    }
+    Hermes' Gambit
 }

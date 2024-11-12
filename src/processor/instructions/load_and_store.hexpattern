@@ -1,7 +1,7 @@
 #include "../../macros/bytes.hexpattern"
 #include "../../macros/memory.hexpattern"
 #include "../../macros/registers.hexpattern"
-#include "../../macros/traps.hexpattern"
+#include "../../macros/exceptions.hexpattern"
 
 // load
 
@@ -35,6 +35,7 @@
         {
             <"Destination register:">
         }
+        Additive Distillation
         Jester's Gambit
         Integration Distillation
         Raise Exception: Fatal
@@ -78,7 +79,30 @@
 // S-type (src, base, offset ->)
 {
     Additive Distillation
-    Jester's Gambit
-    Swap Endianness
-    Store Word
+    Gemini Decomposition
+    Numerical Reflection: 4
+    Modulus Distillation
+    Augur's Purification
+    {
+        {
+            <"SW instruction attempted misaligned store (expected multiple of 4).">
+            <"Memory address:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        {
+            <"Data:">
+        }
+        Additive Distillation
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Jester's Gambit
+        Swap Endianness
+        Store Word
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 }
