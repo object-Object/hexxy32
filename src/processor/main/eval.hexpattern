@@ -2,6 +2,7 @@
 #include "../../macros/heaps.hexpattern"
 #include "../../macros/memory.hexpattern"
 #include "../../macros/registers.hexpattern"
+#include "../../types/hexcasting.hexpattern"
 
 {
     Set Breakpoint After
@@ -104,6 +105,7 @@
         Bookkeeper's Gambit: -- // bootstrap injection target
     }
     Flock's Disintegration
+    Ritualist's Purification
     Prospector's Gambit
 
     {
@@ -121,6 +123,7 @@
         Bookkeeper's Gambit: --- // bootstrap injection target
     }
     Flock's Disintegration
+    Ritualist's Purification
     Rotation Gambit
     Selection Distillation
     
@@ -149,6 +152,7 @@
             Bookkeeper's Gambit: ---- // bootstrap injection target (trap handlers)
         }
         Flock's Disintegration
+        Ritualist's Purification
         Jester's Gambit
         Selection Distillation
         Hermes' Gambit
