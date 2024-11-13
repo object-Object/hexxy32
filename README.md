@@ -50,7 +50,7 @@ Positions are relative to the block where the processor is executed (ie. where t
 
 ### Memory
 
-Main memory is represented as a 22x22x22 cube of focus holders (from HexDebug), each containing a list of 512 number iotas. A greater sentinel is spawned at the center of the cube.
+Main memory is represented as a 19x19x19 cube of focus holders (from HexDebug), each containing a list of 512 number iotas. A greater sentinel is spawned at the center of the cube.
 
 ## Implementation notes
 
