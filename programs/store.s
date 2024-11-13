@@ -1,2 +1,4 @@
-    addi x1, zero, -1
-    sw x1, 8(zero)
+    li x1, 2048
+    li x2, 0x01000000
+    sw x2, 0(x1)
+    sw zero, 0(x1)
