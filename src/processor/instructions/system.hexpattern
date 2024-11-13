@@ -1,0 +1,8 @@
+#define Instruction 38: SYSTEM = num, num, num ->
+// I-type (rd, rs1, imm ->)
+{
+    // discard rd and rs1, which are always 0 here
+    Bookkeeper's Gambit: vv-
+
+    // TODO: implement
+}

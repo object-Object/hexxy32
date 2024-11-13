@@ -1,0 +1,6 @@
+#define Instruction 37: FENCE = num, num, num ->
+// I-type (rd, rs1, imm ->)
+{
+    // no-op since hex is single-threaded (hopefully)
+    Bookkeeper's Gambit: vvv
+}
