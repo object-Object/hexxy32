@@ -1,4 +1,5 @@
 #include "../../macros/bytes.hexpattern"
+#include "../../macros/exceptions.hexpattern"
 #include "../../macros/heaps.hexpattern"
 #include "../../macros/memory.hexpattern"
 #include "../../macros/registers.hexpattern"
@@ -26,115 +27,113 @@
     Load Word
     Swap Endianness
 
-    // funct7 (maybe)
+    // [opcode]
     Gemini Decomposition
-    Numerical Reflection: 2
-    Numerical Reflection: 25
-    Power Distillation
-    Division Distillation
-    Floor Purification
-
-    // funct3 (maybe)
+    Numerical Reflection: 7
+    Truncate Integer
+    Single's Purification
+    
+    // [opcode, funct3]
+    Dioscuri Gambit
     Prospector's Gambit
-    Gemini Decomposition
-    Numerical Reflection: 2
+    Numerical Reflection: 14
     Numerical Reflection: 12
-    Power Distillation
-    Division Distillation
-    Floor Purification
-    Numerical Reflection: 8 // 2^3
-    Modulus Distillation
-
-    // opcode
-    Jester's Gambit
-    Numerical Reflection: 128 // 2^7
-    Modulus Distillation
-
-    // check if funct3 should be used
-    {
-        // table 1: opcodes that use funct3
-        <[99, 3, 35, 23, 51, 15, 115]>
-    }
-    Flock's Disintegration
-
-    Prospector's Gambit
-    Locator's Distillation
-    Numerical Reflection: 1
-    Additive Distillation
-    Augur's Purification
-
+    Slice Integer
+    Integration Distillation
+    
+    // [opcode, funct3, funct7]
+    Gemini Decomposition
     Rotation Gambit
-    Numerical Reflection: 0
-    Augur's Exaltation
-    Rotation Gambit II
+    Numerical Reflection: 25
+    Logical Shift Right
+    Integration Distillation
 
-    // check if funct7 should be used
-    {
-        // table 2: opcodes that use funct7
-        <[23, 51, 115]>
-    }
-    Flock's Disintegration
-
-    Prospector's Gambit
-    Locator's Distillation
-    Numerical Reflection: 1
-    Additive Distillation
-    Augur's Purification
-
-    Rotation Gambit
-    Numerical Reflection: 0
-    Augur's Exaltation
-    Jester's Gambit
-    Rotation Gambit II
-
-    // get opcode index
+    // resolve instruction index
     Numerical Reflection: 3
     Flock's Gambit
 
     {
-        // table 3: [[opcode, funct3, funct7], ...]
-        <[[55, 0, 0], ..., [99, 0, 0], [99, 1, 0], ...]>
+        // table 1: instruction lookup
+        // [[opcode, funct3?, funct7?], ...]
+        <[[55], [23], [111], [103, 0], ..., [19, 1, 0], ..., [15, 0], [115, 0]]>
     }
     Flock's Disintegration
-
-    Jester's Gambit
-    Locator's Distillation
-
-    // get instruction type decoder
-    {
-        Bookkeeper's Gambit: -- // bootstrap injection target
-    }
-    Flock's Disintegration
-    Ritualist's Purification
-    Prospector's Gambit
 
     {
-        // table 4: [decoder, ...]
-        <[4, 4, 5, 1, 3, ...]>
-    }
-    Flock's Disintegration
+        Locator's Distillation
 
-    Jester's Gambit
-    Selection Distillation
-    Selection Distillation
-    
-    // get instruction handler
-    {
-        Bookkeeper's Gambit: --- // bootstrap injection target
+        // break if index > -1
+        Gemini Decomposition
+        Numerical Reflection: -1
+        Maximus Distillation
+        {
+            Charon's Gambit
+            Bookkeeper's Gambit: -
+        }
+        Flock's Disintegration
+        Augur's Exaltation
+        Hermes' Gambit
     }
-    Flock's Disintegration
-    Ritualist's Purification
     Rotation Gambit
-    Selection Distillation
-    
-    // decode and execute instruction
+    Thoth's Gambit
+    Derivation Decomposition
+    Bookkeeper's Gambit: vv-
+
+    // continue executing if instruction is valid
+    // otherwise raise an exception
+    Gemini Decomposition
+    Numerical Reflection: -1
+    Maximus Distillation
     {
-        Set Breakpoint After // break after decoding
+        // get instruction type decoder
+        {
+            Bookkeeper's Gambit: -- // bootstrap injection target
+        }
+        Flock's Disintegration
+        Ritualist's Purification
+        Prospector's Gambit
+
+        {
+            // table 2: instruction index -> decoder index
+            // [decoder, ...]
+            <[4, 4, 5, 1, 3, ...]>
+        }
+        Flock's Disintegration
+
+        Jester's Gambit
+        Selection Distillation
+        Selection Distillation
+        
+        // get instruction handler
+        {
+            Bookkeeper's Gambit: --- // bootstrap injection target
+        }
+        Flock's Disintegration
+        Ritualist's Purification
+        Rotation Gambit
+        Selection Distillation
+        
+        // decode and execute instruction
+        {
+            Set Breakpoint After // break after decoding
+        }
+        Jester's Gambit
+        Additive Distillation
+        Additive Distillation
+        Set Breakpoint After
+        Hermes' Gambit
     }
-    Jester's Gambit
-    Additive Distillation
-    Additive Distillation
-    Set Breakpoint After
+    {
+        Bookkeeper's Gambit: v
+        {
+            <"Attempted to execute illegal instruction.">
+            <"Instruction:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    Augur's Exaltation
     Hermes' Gambit
 
     // handle traps

@@ -3,3 +3,4 @@
 #define Ritualist's Gambit = vec, any ->
 
 #define Iris' Gambit = [pattern] | pattern -> many
+#define Derivation Decomposition = list -> list, any

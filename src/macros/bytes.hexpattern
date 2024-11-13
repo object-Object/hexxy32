@@ -28,7 +28,7 @@
     Modulus Distillation
 }
 
-#define Split Integer (EAST aqwaqaa) = num, num -> num
+#define Split Integer (EAST aqwaqaa) = num, num -> num, num
 // value, length in bits -> value[:length], value[length-1:]
 // eg. truncate2(0110_2, 2) = 01, 10
 {
