@@ -6,6 +6,6 @@
 ---@field remainingIotaCount fun(): number
 ---@field numLinked fun(): number
 ---@field unlink fun(index: number)
----@field sendIota fun(index: number, value: Iota)
+---@field sendIota fun(index: number, ...: Iota)
 
 ---@alias focalLinkType "focal_link"

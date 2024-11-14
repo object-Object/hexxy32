@@ -1,22 +1,11 @@
-local NUM_TX_CHUNKS = 32
+local NUM_TX_CHUNKS = 60
 local CHUNK_SIZE = 512
+
+local data
+local lastSuccessfulLuaIndex = 0
 
 local focalLink = assert(peripheral.wrap("top"), "Expected focal link on top of computer")
 ---@cast focalLink FocalLink
-
--- program args
-local filename = ...
-
-filename = "data/"..filename..".bin.json"
-print("Loading data file: "..filename)
-
-local f = assert(fs.open(filename, "r"), "Failed to open file: "..filename)
-local contents = assert(f.readAll(), "Failed to read file: "..filename)
-f.close()
-
-local data = textutils.unserialiseJSON(contents)
-assert(type(data) == "table", "Invalid file, expected table: "..filename)
-assert(#data > 0, "Invalid file, expected array with at least one element: "..filename)
 
 ---@param luaIndex number
 ---@return string
@@ -26,17 +15,26 @@ end
 
 ---@param luaIndex number
 local function sendChunk(luaIndex)
-    if focalLink.numLinked() == 0 then return end
-    for i = luaIndex, luaIndex + NUM_TX_CHUNKS - 1 do
-        if i > #data then break end
-        print("Sending chunk: "..fmtChunk(i))
-        assert(#data[i] == CHUNK_SIZE, "Invalid chunk: expected "..CHUNK_SIZE.." elements but got "..#data[i])
-        focalLink.sendIota(0, {data[i], i - 1})
-    end
-    focalLink.sendIota(0, {true})
-end
+    if luaIndex > #data then return end
 
-local lastSuccessfulLuaIndex = 0
+    local iotas = {}
+    local endIndex = math.min(luaIndex + NUM_TX_CHUNKS - 1, #data)
+    print("Preparing chunks: "..fmtChunk(luaIndex).." -> "..fmtChunk(endIndex))
+    for i = luaIndex, endIndex do
+        assert(#data[i] == CHUNK_SIZE, "Invalid chunk: expected "..CHUNK_SIZE.." elements but got "..#data[i])
+        table.insert(iotas, {data[i], i - 1})
+    end
+    table.insert(iotas, {true})
+
+    if focalLink.numLinked() == 0 then
+        print("Wisp disconnected, waiting for wisp to reconnect...")
+        return
+    end
+
+    print("Sending data.")
+    local ok, err = pcall(focalLink.sendIota, 0, unpack(iotas))
+    if not ok then print(err) end
+end
 
 ---@type { [string]: fun(...: any) }
 local handlers = {
@@ -62,17 +60,37 @@ local function handleEvent(event, ...)
     if handler ~= nil then handler(...) end
 end
 
--- main loop
+local function main(command, ...)
+    if command == "load" then
+        local filename = ...
+        filename = "data/"..filename..".bin.json"
+        print("Loading data file: "..filename)
 
-focalLink.clearReceivedIotas()
-if focalLink.numLinked() > 0 then
-    sendChunk(1)
-else
-    print("Waiting for wisp to connect...")
+        local f = assert(fs.open(filename, "r"), "Failed to open file: "..filename)
+        local contents = assert(f.readAll(), "Failed to read file: "..filename)
+        f.close()
+
+        print("Parsing data file...")
+        data = textutils.unserialiseJSON(contents)
+        assert(type(data) == "table", "Invalid file, expected table: "..filename)
+        assert(#data > 0, "Invalid file, expected array with at least one element: "..filename)
+
+        focalLink.clearReceivedIotas()
+        if focalLink.numLinked() > 0 then
+            sendChunk(1)
+        else
+            print("Waiting for wisp to connect...")
+        end
+
+        while lastSuccessfulLuaIndex < #data do
+            handleEvent(os.pullEvent())
+        end
+
+        print("Done.")
+    else
+        print("Unknown command: "..command)
+    end
 end
 
-while lastSuccessfulLuaIndex < #data do
-    handleEvent(os.pullEvent())
-end
+main(...)
 
-print("Done.")

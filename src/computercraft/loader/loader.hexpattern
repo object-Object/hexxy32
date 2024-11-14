@@ -35,8 +35,7 @@
                 Rotation Gambit
                 Ritualist's Gambit
 
-                // print written index for debugging, then save it to send later
-                Reveal
+                // save written index to send later
                 Huginn's Gambit
             }
             Augur's Exaltation
@@ -58,7 +57,7 @@
             Bookkeeper's Gambit: v
         }
         {
-            Bookkeeper's Gambit: v
+            Bookkeeper's Gambit: vv
             Numerical Reflection: 0
             Nullary Reflection
             Send Iota
