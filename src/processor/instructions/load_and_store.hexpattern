@@ -21,6 +21,9 @@
 // I-type (dest, base, offset ->)
 {
     Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+
     Gemini Decomposition
     Numerical Reflection: 4
     Modulus Distillation
@@ -79,6 +82,9 @@
 // S-type (src, base, offset ->)
 {
     Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+
     Gemini Decomposition
     Numerical Reflection: 4
     Modulus Distillation

@@ -11,6 +11,8 @@
     Read Register
     Undertaker's Gambit
     Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
 
     Numerical Reflection: 33  // next PC
     Jester's Gambit
@@ -27,6 +29,8 @@
 {
     // rs1 + imm
     Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
     
     // set least significant bit to 0
     Numerical Reflection: 2
@@ -112,6 +116,9 @@
         Numerical Reflection: 32  // PC
         Read Register
         Additive Distillation
+        Numerical Reflection: 32
+        Truncate Integer
+
         Numerical Reflection: 33  // next PC
         Jester's Gambit
         Write Register
