@@ -1,11 +1,7 @@
-heap_size = 19;
-focus_length = 512 * 4;
-layer_length = heap_size * heap_size * focus_length;
-
 ENTRY(_start)
 
 MEMORY {
-    ram (rwx) : ORIGIN = 0, LENGTH = heap_size * layer_length
+    ram (rwx) : ORIGIN = 0, LENGTH = 19*19*19 * 512*4
 }
 
 SECTIONS {
