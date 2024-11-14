@@ -1,32 +1,25 @@
-CC_DATA_DIR = src/computercraft/loader/data
-
 PROGRAMS = $(patsubst programs/%.s,%,$(wildcard programs/*.s))
 
 all: $(PROGRAMS)
 
-$(PROGRAMS): %: $(CC_DATA_DIR)/%.bin programs/%.dump
+$(PROGRAMS): %: build/cc_data/%.bin build/%.dump
 
-$(CC_DATA_DIR)/%.bin: programs/%.bin
-	mkdir -p $(CC_DATA_DIR)
-	cp programs/$*.bin $(CC_DATA_DIR)/$*.bin
+# data dumps for the ComputerCraft-based memory loader
+build/cc_data/%.bin: build/%.out | MKDIR/build/cc_data
+	riscv64-unknown-elf-objcopy --output-target binary build/$*.out build/cc_data/$*.bin
 
-%.bin: %.out
-	riscv64-unknown-elf-objcopy --output-target binary $*.out $*.bin
+build/%.dump: build/%.out
+	riscv64-unknown-elf-objdump --disassemble build/$*.out > build/$*.dump
 
-%.dump: %.out
-	riscv64-unknown-elf-objdump --disassemble $*.out > $*.dump
+build/%.out: build/%.o
+	riscv64-unknown-elf-ld -melf32lriscv --script=memory.ld -o build/$*.out build/$*.o
 
-%.out: %.o memory.ld
-	riscv64-unknown-elf-ld -melf32lriscv --script=memory.ld -o $*.out $*.o
+build/%.o: programs/%.s | MKDIR/build
+	clang --target=riscv32 -march=rv32i --compile -o build/$*.o programs/$*.s
 
-%.o: %.s
-	clang --target=riscv32 -march=rv32i --compile -o $*.o $*.s
+MKDIR/%:
+	mkdir -p $*
 
 .PHONY: clean
 clean:
-	rm -f \
-		programs/*.o \
-		programs/*.out \
-		programs/*.bin \
-		programs/*.dump \
-		$(CC_DATA_DIR)/*.bin
+	rm -rf build
