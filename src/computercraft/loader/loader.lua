@@ -1,7 +1,11 @@
+local strings = require("cc.strings")
+
 local NUM_TX_CHUNKS = 60
 local CHUNK_SIZE = 512
+local CHUNK_BYTES = CHUNK_SIZE * 4
+local CHUNK_FMT = ">"..string.rep("I4", CHUNK_SIZE) -- CHUNK_SIZE 32-bit integers in big endian
 
-local data
+local data = {}
 local lastSuccessfulLuaIndex = 0
 
 local focalLink = assert(peripheral.wrap("top"), "Expected focal link on top of computer")
@@ -19,9 +23,7 @@ local function sendChunk(luaIndex)
 
     local iotas = {}
     local endIndex = math.min(luaIndex + NUM_TX_CHUNKS - 1, #data)
-    print("Preparing chunks: "..fmtChunk(luaIndex).." -> "..fmtChunk(endIndex))
     for i = luaIndex, endIndex do
-        assert(#data[i] == CHUNK_SIZE, "Invalid chunk: expected "..CHUNK_SIZE.." elements but got "..#data[i])
         table.insert(iotas, {data[i], i - 1})
     end
     table.insert(iotas, {true})
@@ -31,7 +33,7 @@ local function sendChunk(luaIndex)
         return
     end
 
-    print("Sending data.")
+    print("Sending chunks: "..(luaIndex-1).." -> "..fmtChunk(endIndex))
     local ok, err = pcall(focalLink.sendIota, 0, unpack(iotas))
     if not ok then print(err) end
 end
@@ -63,17 +65,23 @@ end
 local function main(command, ...)
     if command == "load" then
         local filename = ...
-        filename = "data/"..filename..".bin.json"
+        filename = "data/"..filename..".bin"
+
         print("Loading data file: "..filename)
+        local f = assert(fs.open(filename, "rb"), "Failed to open file: "..filename)
+        while true do
+            local line = f.read(CHUNK_BYTES)
+            if not line then break end
 
-        local f = assert(fs.open(filename, "r"), "Failed to open file: "..filename)
-        local contents = assert(f.readAll(), "Failed to read file: "..filename)
+            line = line..string.rep("\0", CHUNK_BYTES - #line)
+            local row = {string.unpack(CHUNK_FMT, line)}
+            table.remove(row) -- string.unpack returns the data and the next index to read
+
+            assert(#row == CHUNK_SIZE, "Invalid chunk: expected "..CHUNK_SIZE.." elements but got "..#row)
+            table.insert(data, row)
+        end
         f.close()
-
-        print("Parsing data file...")
-        data = textutils.unserialiseJSON(contents)
-        assert(type(data) == "table", "Invalid file, expected table: "..filename)
-        assert(#data > 0, "Invalid file, expected array with at least one element: "..filename)
+        assert(#data > 0, "Invalid file, expected at least one element: "..filename)
 
         focalLink.clearReceivedIotas()
         if focalLink.numLinked() > 0 then

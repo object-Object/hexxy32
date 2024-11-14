@@ -1,6 +1,6 @@
 *.o
+*.out
 *.bin
-*.bin.json
 *.dump
 *.hex
 /build/

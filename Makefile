@@ -4,24 +4,29 @@ PROGRAMS = $(patsubst programs/%.s,%,$(wildcard programs/*.s))
 
 all: $(PROGRAMS)
 
-$(PROGRAMS): %: $(CC_DATA_DIR)/%.bin.json programs/%.bin programs/%.dump
+$(PROGRAMS): %: $(CC_DATA_DIR)/%.bin programs/%.dump
 
-$(CC_DATA_DIR)/%.bin.json: programs/%.bin.json
+$(CC_DATA_DIR)/%.bin: programs/%.bin
 	mkdir -p $(CC_DATA_DIR)
-	mv programs/$*.bin.json $(CC_DATA_DIR)/$*.bin.json
+	cp programs/$*.bin $(CC_DATA_DIR)/$*.bin
 
-%.bin.json: %.bin
-	python3 scripts/dump.py $*.bin > $*.bin.json
+%.bin: %.out
+	riscv64-unknown-elf-objcopy --output-target binary $*.out $*.bin
 
-%.bin: %.o
-	riscv64-unknown-elf-objcopy -O binary $*.o $*.bin
+%.dump: %.out
+	riscv64-unknown-elf-objdump --disassemble $*.out > $*.dump
 
-%.dump: %.o
-	riscv64-unknown-elf-objdump -d $*.o > $*.dump
+%.out: %.o memory.ld
+	riscv64-unknown-elf-ld -melf32lriscv --script=memory.ld -o $*.out $*.o
 
 %.o: %.s
-	clang --target=riscv32 -march=rv32i $*.s -c -o $*.o
+	clang --target=riscv32 -march=rv32i --compile -o $*.o $*.s
 
 .PHONY: clean
 clean:
-	rm -f programs/*.o programs/*.bin programs/*.bin.json programs/*.dump $(CC_DATA_DIR)/*.bin.json
+	rm -f \
+		programs/*.o \
+		programs/*.out \
+		programs/*.bin \
+		programs/*.dump \
+		$(CC_DATA_DIR)/*.bin
