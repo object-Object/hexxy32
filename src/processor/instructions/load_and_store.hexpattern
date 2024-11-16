@@ -8,13 +8,48 @@
 #define Instruction 10: LB = num, num, num ->
 // I-type (dest, base, offset ->)
 {
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
 
+    Numerical Reflection: 8 // load 8 bits
+    True Reflection // do sign extension
+    Raise Exception: Request Memory Load
 }
 
 #define Instruction 11: LH = num, num, num ->
 // I-type (dest, base, offset ->)
 {
-
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+    
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Modulus Distillation
+    Augur's Purification
+    {
+        {
+            <"LH instruction attempted misaligned load (expected multiple of 2).">
+            <"Memory address:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        {
+            <"Destination register:">
+        }
+        Additive Distillation
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Numerical Reflection: 16 // load 16 bits
+        True Reflection // do sign extension
+        Raise Exception: Request Memory Load
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 }
 
 #define Instruction 12: LW = num, num, num ->
@@ -44,9 +79,9 @@
         Raise Exception: Fatal
     }
     {
-        Load Word
-        Swap Endianness
-        Write Register
+        Numerical Reflection: 32 // load 32 bits
+        False Reflection // skip sign extension
+        Raise Exception: Request Memory Load
     }
     Augur's Exaltation
     Hermes' Gambit
@@ -55,13 +90,48 @@
 #define Instruction 13: LBU = num, num, num ->
 // I-type (dest, base, offset ->)
 {
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
 
+    Numerical Reflection: 8 // load 8 bits
+    False Reflection // skip sign extension
+    Raise Exception: Request Memory Load
 }
 
 #define Instruction 14: LHU = num, num, num ->
 // I-type (dest, base, offset ->)
 {
-
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
+    
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Modulus Distillation
+    Augur's Purification
+    {
+        {
+            <"LHU instruction attempted misaligned load (expected multiple of 2).">
+            <"Memory address:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        {
+            <"Destination register:">
+        }
+        Additive Distillation
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Numerical Reflection: 16 // load 16 bits
+        False Reflection // skip sign extension
+        Raise Exception: Request Memory Load
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 }
 
 // store
@@ -69,13 +139,46 @@
 #define Instruction 15: SB = num, num, num ->
 // S-type (src, base, offset ->)
 {
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
 
+    Numerical Reflection: 8 // store 8 bits
+    Raise Exception: Request Memory Store
 }
 
 #define Instruction 16: SH = num, num, num ->
 // S-type (src, base, offset ->)
 {
+    Additive Distillation
+    Numerical Reflection: 32
+    Truncate Integer
 
+    Gemini Decomposition
+    Numerical Reflection: 2
+    Modulus Distillation
+    Augur's Purification
+    {
+        {
+            <"SH instruction attempted misaligned store (expected multiple of 2).">
+            <"Memory address:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        {
+            <"Data:">
+        }
+        Additive Distillation
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Numerical Reflection: 16 // store 16 bits
+        Raise Exception: Request Memory Store
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 }
 
 #define Instruction 17: SW = num, num, num ->
@@ -105,9 +208,8 @@
         Raise Exception: Fatal
     }
     {
-        Jester's Gambit
-        Swap Endianness
-        Store Word
+        Numerical Reflection: 32 // store 32 bits
+        Raise Exception: Request Memory Store
     }
     Augur's Exaltation
     Hermes' Gambit

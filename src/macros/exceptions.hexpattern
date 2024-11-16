@@ -1,10 +1,37 @@
 #include "./registers.hexpattern"
 
+#define Raise Exception: Request Memory Load (SOUTH_WEST aqdedd) = num, num, num, bool ->
+// register, address, # bits, signed ->
+{
+    Numerical Reflection: 4
+    Flock's Gambit
+    Numerical Reflection: 0 // memory load
+    Speaker's Distillation
+
+    Numerical Reflection: 34  // trap message register
+    Jester's Gambit
+    Write Register
+}
+
+#define Raise Exception: Request Memory Store (SOUTH_WEST aqdeddw) = num, num, num ->
+// value, address, # bits ->
+{
+    Numerical Reflection: 3
+    Flock's Gambit
+    Numerical Reflection: 1 // memory store
+    Speaker's Distillation
+    
+    Numerical Reflection: 34  // trap message register
+    Jester's Gambit
+    Write Register
+}
+
 #define Raise Exception: Fatal (SOUTH_WEST aqdeddedwd) = [many] ->
 // [error message, ...] ->
 {
     Numerical Reflection: 3  // fatal trap code
     Speaker's Distillation
+
     Numerical Reflection: 34  // trap message register
     Jester's Gambit
     Write Register

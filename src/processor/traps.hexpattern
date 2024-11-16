@@ -1,23 +1,108 @@
-#define Handle Trap: Contained = list ->
+#include "../macros/bytes.hexpattern"
+#include "../macros/memory.hexpattern"
+#include "../macros/registers.hexpattern"
+
+#define Trap 0: Memory Load = [num, num, num, bool] ->
+// [register, address, # bits, signed] ->
 {
-    // TODO: implement
-    Bookkeeper's Gambit: v
+    Flock's Disintegration
+    Jester's Gambit
+    Rotation Gambit
+
+    Gemini Decomposition
+    Load Word
+    Swap Endianness
+    
+    // right shift by (address % 4) bytes
+    Jester's Gambit
+    Numerical Reflection: 4
+    Modulus Distillation
+    Numerical Reflection: 8
+    Multiplicative Distillation
+    Logical Shift Right
+
+    // truncate to the specified number of bits
+    Jester's Gambit
+    Undertaker's Gambit
+    Truncate Integer
+
+    // if it's a signed value, extend the sign
+    Jester's Gambit
+    Rotation Gambit
+    {
+        // if unsigned
+        Bookkeeper's Gambit: v
+        
+        // if signed
+        Extend Sign
+    }
+    Speaker's Decomposition
+    Augur's Exaltation
+    Hermes' Gambit
+
+    Write Register
 }
 
-#define Handle Trap: Requested = list ->
+#define Trap 1: Memory Store = [num, num, num] ->
+// [value, address, # bits] ->
 {
-    // TODO: implement
-    Bookkeeper's Gambit: v
+    Flock's Disintegration
+    Prospector's Gambit
+    Numerical Reflection: -3
+    Fisherman's Gambit II
+
+    Load Word
+    Swap Endianness
+
+    // bitmask of the specified length
+    Prospector's Gambit
+    Numerical Reflection: 2
+    Jester's Gambit
+    Power Distillation
+    Numerical Reflection: 1
+    Subtractive Distillation
+    
+    Numerical Reflection: 3
+    Fisherman's Gambit
+    Numerical Reflection: 4
+    Modulus Distillation
+    Numerical Reflection: 8
+    Multiplicative Distillation
+
+    // 111...1 - (bitmask << shift)
+    Undertaker's Gambit
+    Logical Shift Left
+
+    Numerical Reflection: 2
+    Numerical Reflection: 32
+    Power Distillation
+    Numerical Reflection: 1
+    Subtractive Distillation
+    Jester's Gambit
+    Subtractive Distillation
+    
+    // existing data, but with the section where we're inserting zeroed
+    Rotation Gambit
+    Conjunction Distillation
+
+    // take the low n bits of the value to store
+    Rotation Gambit
+    Numerical Reflection: 3
+    Fisherman's Gambit
+    Jester's Gambit
+    Truncate Integer
+    
+    // put the value into the zeroed section and store it to memory
+    Rotation Gambit
+    Logical Shift Left
+    Additive Distillation
+
+    Swap Endianness
+    Store Word
 }
 
-#define Handle Trap: Invisible = list ->
-{
-    // TODO: implement
-    Bookkeeper's Gambit: v
-}
-
-#define Handle Trap: Fatal = list ->
-// [error message] ->
+#define Trap 3: Fatal = list ->
+// [error message, ...] ->
 {
     {
         <"Fatal trap encountered. The processor will now terminate.">
