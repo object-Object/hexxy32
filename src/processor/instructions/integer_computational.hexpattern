@@ -59,21 +59,21 @@
 #define Instruction 21: XORI = num, num, num ->
 // I-type (rd, rs1, imm ->)
 {
-    Exclusionary Distillation
+    Exclusion Distillation
     Write Register
 }
 
 #define Instruction 22: ORI = num, num, num ->
 // I-type (rd, rs1, imm ->)
 {
-    Unifying Distillation
+    Disjunction Distillation
     Write Register
 }
 
 #define Instruction 23: ANDI = num, num, num ->
 // I-type (rd, rs1, imm ->)
 {
-    Intersection Distillation
+    Conjunction Distillation
     Write Register
 }
 
