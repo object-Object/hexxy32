@@ -21,7 +21,7 @@ Registers are stored in the [ravenmind](https://hexcasting.hexxy.media/v/0.11.1-
 | 33    | Next `pc`        |
 | 34    | Trap message     |
 
-### Exceptions/interrupts
+## Traps
 
 Instructions and interrupts can trigger trap handlers (ie. raise exceptions) by setting index 34 of the ravenmind to specific values. The format is as follows:
 
@@ -30,7 +30,15 @@ Instructions and interrupts can trigger trap handlers (ie. raise exceptions) by 
 | N/A           | N/A       | Default value   | `0`                                      |
 | 0             | Invisible | Memory load     | `[0, register, address, # bits, signed]` |
 | 1             | Invisible | Memory store    | `[1, value, address, # bits]`            |
+| 2             | Requested | System call     | `[2, value, address, # bits]`            |
 | 3             | Fatal     | Fatal exception | `[3, ...error message lines]`            |
+
+## System calls
+
+| Index (a7) | Description        | a0        | a1     | a2  | a3  | a4  | a5  | a6  |
+| ---------- | ------------------ | --------- | ------ | --- | --- | --- | --- | --- |
+| 0          | Halt               | Exit code |        |     |     |     |     |     |
+| 1          | Print ASCII string | Address   | Length |     |     |     |     |     |
 
 ## Physical layout
 

@@ -1,8 +1,25 @@
+#include "../../macros/registers.hexpattern"
+
 #define Instruction 38: SYSTEM = num, num, num ->
 // I-type (rd, rs1, imm ->)
 {
     // discard rd and rs1, which are always 0 here
     Bookkeeper's Gambit: vv-
 
-    // TODO: implement
+    // imm can be 0 (ECALL) or 111111111111 (EBREAK)
+    // technically EBREAK is actually 000000000001, but the I-type decoder does sign extension
+    Numerical Reflection: 0
+    Equality Distillation
+    {
+        // ECALL
+        Numerical Reflection: 34
+        Numerical Reflection: 2 // syscall trap
+        Single's Purification
+        Write Register
+    }
+    {
+        // EBREAK (currently a no-op)
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 }

@@ -101,6 +101,28 @@
     Store Word
 }
 
+#define Trap 2: System Call = [] ->
+// no arguments
+{
+    Bookkeeper's Gambit: v
+    
+    // read registers a0-a7
+    Muninn's Reflection
+    Numerical Reflection: 10
+    Numerical Reflection: 18
+    Selection Exaltation
+    Flock's Disintegration
+    
+    // look up and execute syscall handler
+    {
+        <...syscall handlers>
+    }
+    Jester's Gambit
+    Selection Distillation
+    Set Breakpoint After
+    Hermes' Gambit
+}
+
 #define Trap 3: Fatal = list ->
 // [error message, ...] ->
 {
