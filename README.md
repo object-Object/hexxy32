@@ -38,14 +38,15 @@ Instructions and interrupts can trigger trap handlers (ie. raise exceptions) by 
 
 Positions are relative to the block where the processor is executed (ie. where the wisp is summoned, or where the player is looking when the debug trinket is used).
 
-| Y offset | Value                                |
-| -------- | ------------------------------------ |
-| +4       | trap handlers (see previous table)   |
-| +3       | decoders (see spreadsheet)           |
-| +2       | instructions (see spreadsheet)       |
-| +1       | [startup, shutdown, eval, bootstrap] |
-| 0        | N/A                                  |
-| -1       | ravenmind state                      |
+| Y offset | Value                                             |
+| -------- | ------------------------------------------------- |
+| +5       | trap handlers (see previous table)                |
+| +4       | decoders (see spreadsheet)                        |
+| +3       | instructions 20-38, null-padded (see spreadsheet) |
+| +2       | instructions 0-19 (see spreadsheet)               |
+| +1       | [startup, shutdown, eval, bootstrap]              |
+| 0        | N/A                                               |
+| -1       | ravenmind state                                   |
 
 ### Memory
 

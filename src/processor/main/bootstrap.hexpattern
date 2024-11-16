@@ -27,8 +27,8 @@
     }
     {
         // [y offset, injection target]
-        <[4, Bookkeeper's Gambit: ----]> // trap handlers
-        <[3, Bookkeeper's Gambit: --]> // decoders
+        <[5, Bookkeeper's Gambit: ----]> // trap handlers
+        <[4, Bookkeeper's Gambit: --]> // decoders
         <[2, Bookkeeper's Gambit: ---]> // instruction handlers
     }
     Thoth's Gambit

@@ -106,11 +106,22 @@
         
         // get instruction handler
         {
-            Bookkeeper's Gambit: --- // bootstrap injection target
+            Bookkeeper's Gambit: --- // bootstrap injection target for lower instruction focus location
         }
         Flock's Disintegration
-        Ritualist's Purification
+
+        // if the instruction index is greater than 19, it's stored in the next focus up due to stack size limits
         Rotation Gambit
+        Undertaker's Gambit
+        Numerical Reflection: 19
+        Maximus Distillation
+        Vector Reflection +Y
+        Vector Reflection Zero
+        Augur's Exaltation
+        Additive Distillation
+
+        Ritualist's Purification
+        Jester's Gambit
         Selection Distillation
         
         // decode and execute instruction
