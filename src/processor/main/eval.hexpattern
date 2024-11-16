@@ -146,6 +146,7 @@
         Bookkeeper's Gambit: v
 
         // if truthy
+        // load and execute trap handler
         Speaker's Decomposition
         {
             Bookkeeper's Gambit: ---- // bootstrap injection target (trap handlers)
@@ -155,6 +156,11 @@
         Jester's Gambit
         Selection Distillation
         Hermes' Gambit
+
+        // if it wasn't a fatal trap, reset the trap register
+        Numerical Reflection: 34
+        Numerical Reflection: 0
+        Write Register
     }
     Speaker's Decomposition
     Augur's Exaltation
