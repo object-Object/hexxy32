@@ -1,7 +1,7 @@
 .global _start
 _start:
     la a0, msg     # address
-    li a1, 4 # length
+    la a1, msg_len # length
     li a7, 1       # syscall (print)
     ecall
 
