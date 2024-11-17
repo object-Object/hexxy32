@@ -1,5 +1,7 @@
 use core::{arch::asm, fmt};
 
+use alloc::string::ToString;
+
 use crate::constants::Syscall;
 
 #[macro_export]
@@ -17,11 +19,7 @@ macro_rules! println {
 
 /// Internal function.
 pub fn _print(msg: fmt::Arguments) {
-    // TODO: figure out how to handle arguments with placeholders
-    _print_str(
-        msg.as_str()
-            .unwrap_or("printing strings with placeholders is currently unsupported"),
-    );
+    _print_str(msg.to_string().as_str());
 }
 
 /// Internal function.
