@@ -1,6 +1,6 @@
 #include "../types/hexcasting.hexpattern"
 
-// run processor indefinitely (one instruction per tick)
+// run processor indefinitely
 {
     // get processor position
     Mind's Reflection
