@@ -1,0 +1,46 @@
+#include "../types/hexcasting.hexpattern"
+
+// run processor indefinitely (one instruction per tick)
+{
+    // get processor position
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Archer's Distillation
+    Gemini Decomposition
+
+    // if sneaking, reset processor state
+    Mind's Reflection
+    Stadiometer's Purification
+    Numerical Reflection: 1.5
+    Maximus Distillation
+    Vacant Reflection
+    {
+        Gemini Decomposition
+        Vector Reflection -Y
+        Additive Distillation
+        Nullary Reflection
+        Ritualist's Gambit
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+    
+    // bootstrap processor code
+    Gemini Decomposition
+    Vector Reflection +Y
+    Additive Distillation
+    Ritualist's Purification
+    Flock's Disintegration
+    Hermes' Gambit
+    
+    // wisp loop: run startup, then eval once, then shutdown
+    Jester's Gambit
+    Additive Distillation
+    Additive Distillation
+    
+    // summon wisp
+    Jester's Gambit
+    Numerical Reflection: 100 // media
+    Summon Cyclic Wisp
+}
