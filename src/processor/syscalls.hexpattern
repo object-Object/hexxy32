@@ -63,11 +63,23 @@
             // ASCII lookup table
             // copy the next line, split on ¦, replace index 10 with a newline using Breaking Reflection
             // ¦¦¦¦¦¦¦¦¦ ¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ ¦!¦"¦#¦$¦%¦&¦'¦(¦)¦*¦+¦,¦-¦.¦/¦0¦1¦2¦3¦4¦5¦6¦7¦8¦9¦:¦;¦<¦=¦>¦?¦@¦A¦B¦C¦D¦E¦F¦G¦H¦I¦J¦K¦L¦M¦N¦O¦P¦Q¦R¦S¦T¦U¦V¦W¦X¦Y¦Z¦[¦\¦]¦^¦_¦`¦a¦b¦c¦d¦e¦f¦g¦h¦i¦j¦k¦l¦m¦n¦o¦p¦q¦r¦s¦t¦u¦v¦w¦x¦y¦z¦{¦|¦}¦~¦
+            // alternatively, use this one to replace all non-printing characters with ?
+            // ?¦?¦?¦?¦?¦?¦?¦?¦?¦ ¦\n¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦?¦ ¦!¦"¦#¦$¦%¦&¦'¦(¦)¦*¦+¦,¦-¦.¦/¦0¦1¦2¦3¦4¦5¦6¦7¦8¦9¦:¦;¦<¦=¦>¦?¦@¦A¦B¦C¦D¦E¦F¦G¦H¦I¦J¦K¦L¦M¦N¦O¦P¦Q¦R¦S¦T¦U¦V¦W¦X¦Y¦Z¦[¦\¦]¦^¦_¦`¦a¦b¦c¦d¦e¦f¦g¦h¦i¦j¦k¦l¦m¦n¦o¦p¦q¦r¦s¦t¦u¦v¦w¦x¦y¦z¦{¦|¦}¦~¦?
             <["", ..., " ", "\n", ..., " ", "!", ...]>
         }
         Flock's Disintegration
+
+        // if the byte is outside of the ascii range, print "?" instead
         Rotation Gambit
         Load Byte
+
+        Gemini Decomposition
+        Numerical Reflection: 128
+        Minimus Distillation
+        Jester's Gambit
+        Numerical Reflection: 63 // ?
+        Augur's Exaltation
+
         Selection Distillation
         Additive Distillation
         
