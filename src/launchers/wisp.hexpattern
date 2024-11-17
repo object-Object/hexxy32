@@ -33,8 +33,44 @@
     Ritualist's Purification
     Flock's Disintegration
     Hermes' Gambit
-    
-    // wisp loop: run startup, then eval once, then shutdown
+
+    // wrap eval in a quine to run many instructions per tick
+    // we're using a quine so we can store eval on the call stack, because otherwise we hit the stack limit
+    {
+        {
+            Bookkeeper's Gambit: - // regular eval code
+        }
+        Flock's Disintegration
+        Hermes' Gambit
+        
+        // Ibra oniki ra. QUINIO alef a ra.
+        {
+            Bookkeeper's Gambit: - // self
+        }
+        Flock's Disintegration
+        Numerical Reflection: 6
+        Prospector's Gambit
+        Surgeon's Exaltation
+        
+        // run another instruction if we have more than 10^4 ops remaining
+        Thanatos' Reflection
+        Numerical Reflection: 10
+        Numerical Reflection: 4
+        Power Distillation
+        Maximus Distillation
+        Jester's Gambit
+        Vacant Reflection
+        Augur's Exaltation
+        Hermes' Gambit
+    }
+    Numerical Reflection: 1
+    Rotation Gambit
+    Surgeon's Exaltation
+    Numerical Reflection: 6
+    Prospector's Gambit
+    Surgeon's Exaltation
+
+    // wisp loop: run startup, then evals, then shutdown
     Jester's Gambit
     Additive Distillation
     Additive Distillation
