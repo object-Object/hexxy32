@@ -12,7 +12,7 @@ build/%.dump: build/%.out
 	riscv64-unknown-elf-objdump --disassemble build/$*.out > build/$*.dump
 
 build/%.out: build/%.o
-	riscv64-unknown-elf-ld -melf32lriscv --script=memory.ld -o build/$*.out build/$*.o
+	riscv64-unknown-elf-ld -melf32lriscv --script=rust/hexxy32/link.x -o build/$*.out build/$*.o
 
 build/%.o: programs/%.s | build
 	clang --target=riscv32 -march=rv32i --compile -o build/$*.o programs/$*.s

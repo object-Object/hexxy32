@@ -19,5 +19,10 @@
     "files.associations": {
         "*.s": "riscv"
     },
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "rust-analyzer.linkedProjects": [
+        "rust/hexxy32/Cargo.toml",
+        "rust/demo/Cargo.toml"
+    ],
+    "rust-analyzer.check.allTargets": false
 }
