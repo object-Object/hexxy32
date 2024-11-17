@@ -1,8 +1,7 @@
 ENTRY(_start)
 
 MEMORY {
-    rom (rx) : ORIGIN = 0,                LENGTH = 19*19*10 * 512*4
-    ram (rw) : ORIGIN = 19*19*10 * 512*4, LENGTH = 19*19*9 * 512*4
+    ram (rwx) : ORIGIN = 0, LENGTH = 19*19*19 * 512*4
 }
 
 SECTIONS {
@@ -10,11 +9,11 @@ SECTIONS {
         KEEP(*(.text.start));
         *(.text.reset);
         *(.text .text.*);
-    } > rom
+    } > ram
 
     .rodata : {
         *(.rodata .rodata.*);
-    } > rom
+    } > ram
 
     .data : {
         _sdata = .;
