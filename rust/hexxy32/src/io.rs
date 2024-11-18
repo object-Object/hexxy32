@@ -1,16 +1,18 @@
 use core::{arch::asm, fmt};
 
+#[cfg(feature = "alloc")]
 use alloc::string::ToString;
 
 use crate::constants::Syscall;
 
+#[cfg(feature = "alloc")]
 #[macro_export]
 macro_rules! println {
     () => {
-        $crate::println!("")
+        $crate::io::print_str!("")
     };
     ($arg:ident) => {{
-        $crate::io::_print_str($arg);
+        $crate::io::print_str($arg);
     }};
     ($($arg:tt)*) => {{
         $crate::io::_print(format_args!($($arg)*));
@@ -18,12 +20,21 @@ macro_rules! println {
 }
 
 /// Internal function.
+#[cfg(feature = "alloc")]
 pub fn _print(msg: fmt::Arguments) {
-    _print_str(msg.to_string().as_str());
+    print_str(msg.to_string().as_str());
 }
 
 /// Internal function.
-pub fn _print_str(msg: &str) {
+#[cfg(not(feature = "alloc"))]
+pub fn _print(msg: fmt::Arguments) {
+    print_str(
+        msg.as_str()
+            .unwrap_or("string formatting is not supported without alloc"),
+    );
+}
+
+pub fn print_str(msg: &str) {
     unsafe {
         asm!(
             "ecall",

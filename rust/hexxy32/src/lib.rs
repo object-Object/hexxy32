@@ -1,20 +1,24 @@
 #![no_std]
 #![allow(clippy::empty_loop)]
 
+#[cfg(feature = "alloc")]
 pub extern crate alloc;
 
 use core::{
     arch::{asm, global_asm},
     panic::PanicInfo,
 };
+#[cfg(feature = "alloc")]
 use embedded_alloc::LlffHeap as Heap;
 
 use constants::Syscall;
+use io::print_str;
 
 pub mod constants;
 pub mod io;
 pub mod prelude;
 
+#[cfg(feature = "alloc")]
 #[global_allocator]
 static HEAP: Heap = Heap::empty();
 
@@ -38,24 +42,31 @@ unsafe extern "C" fn _start() -> ! {
         static mut __sdata: u8;
         static mut __edata: u8;
         static __sidata: u8;
+    }
+
+    #[cfg(feature = "alloc")]
+    extern "C" {
         static __sheap: u8;
         static _heap_size: u8;
     }
 
-    /*
     // zero bss
-    // TODO: this is really slow.
     let count = &raw const __ebss as usize - &raw const __sbss as usize;
     core::ptr::write_bytes(&raw mut __sbss, 0, count);
-    */
 
     // copy static variables
     let count = &raw const __edata as usize - &raw const __sdata as usize;
     core::ptr::copy_nonoverlapping(&__sidata as *const u8, &raw mut __sdata, count);
 
+    #[cfg(feature = "alloc")]
     unsafe {
         let heap_bottom = &__sheap as *const u8 as usize;
         let heap_size = &_heap_size as *const u8 as usize;
+        // not using assert here because the panic handler uses println, which needs alloc
+        if heap_size == 0 {
+            print_str("heap size must be greater than 0");
+            halt(1);
+        }
         HEAP.init(heap_bottom, heap_size);
     }
 
@@ -68,19 +79,40 @@ unsafe extern "C" fn _start() -> ! {
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
-    match (info.message().as_str(), info.location()) {
+    let message = info.message().as_str();
+    let location = info.location();
+
+    #[cfg(feature = "alloc")]
+    match (message, location) {
         (Some(message), Some(location)) => println!("thread panicked at '{message}', {location}"),
         (Some(message), None) => println!("thread panicked at '{message}'"),
         (None, Some(location)) => println!("thread panicked at {location}"),
         (None, None) => println!("thread panicked"),
     }
+
+    #[cfg(not(feature = "alloc"))]
+    if message.is_none() && location.is_none() {
+        print_str("thread panicked");
+    } else {
+        print_str("thread panicked:");
+        if let Some(message) = message {
+            print_str(message);
+        }
+        if let Some(location) = location {
+            print_str(location.file());
+        }
+    }
+
     halt(1);
 }
 
+#[cfg(feature = "alloc")]
 struct CriticalSection;
+#[cfg(feature = "alloc")]
 critical_section::set_impl!(CriticalSection);
 
 // hexxy32 is single-threaded and doesn't support interrupts
+#[cfg(feature = "alloc")]
 unsafe impl critical_section::Impl for CriticalSection {
     unsafe fn acquire() -> critical_section::RawRestoreState {}
     unsafe fn release(_restore_state: critical_section::RawRestoreState) {}

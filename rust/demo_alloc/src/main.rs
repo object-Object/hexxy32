@@ -1,5 +1,6 @@
 #![no_std]
 #![no_main]
+#![allow(clippy::empty_loop)]
 
 use alloc::vec::Vec;
 use hexxy32::prelude::*;

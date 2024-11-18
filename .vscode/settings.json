@@ -22,9 +22,11 @@
     "makefile.configureOnOpen": false,
     "rust-analyzer.linkedProjects": [
         "rust/hexxy32/Cargo.toml",
-        "rust/demo/Cargo.toml"
+        "rust/demo_alloc/Cargo.toml",
+        "rust/demo_no_alloc/Cargo.toml"
     ],
     "rust-analyzer.check.allTargets": false,
+    "rust-analyzer.cargo.features": "all",
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,

@@ -17,7 +17,7 @@ REGION_ALIAS("REGION_STACK",  ram);
 
 PROVIDE(_stack_start = ORIGIN(REGION_STACK) + LENGTH(REGION_STACK));
 PROVIDE(_stack_size = 2K);
-PROVIDE(_heap_size = 4K);
+PROVIDE(_heap_size = 0);
 
 SECTIONS {
     .text : {
