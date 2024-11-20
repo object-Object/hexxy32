@@ -169,7 +169,7 @@
         Set Breakpoint After
         Hermes' Gambit
 
-        // if it wasn't a fatal trap, reset the trap register
+        // reset the trap register
         Numerical Reflection: 34
         Numerical Reflection: 0
         Write Register

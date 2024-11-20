@@ -170,10 +170,8 @@
     Thoth's Gambit
     Bookkeeper's Gambit: v
     
-    // mishap to stop execution
-    {
-        Set Breakpoint After
-        <"Terminating execution.">
-    }
-    Hermes' Gambit
+    // set exit flag to stop execution
+    Numerical Reflection: 35
+    Numerical Reflection: 1
+    Write Register
 }

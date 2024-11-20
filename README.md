@@ -20,6 +20,7 @@ Registers are stored in the [ravenmind](https://hexcasting.hexxy.media/v/0.11.1-
 | 32    | Current `pc`     |
 | 33    | Next `pc`        |
 | 34    | Trap message     |
+| 35    | Exit flag        |
 
 ## Traps
 
