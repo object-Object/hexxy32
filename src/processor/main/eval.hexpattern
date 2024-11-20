@@ -90,7 +90,6 @@
             Bookkeeper's Gambit: -- // bootstrap injection target
         }
         Flock's Disintegration
-        Ritualist's Purification
         Prospector's Gambit
 
         {
@@ -102,7 +101,7 @@
 
         Jester's Gambit
         Selection Distillation
-        Selection Distillation
+        Ritualist's Distillation
         
         // get instruction handler
         {
@@ -120,9 +119,8 @@
         Augur's Exaltation
         Additive Distillation
 
-        Ritualist's Purification
         Jester's Gambit
-        Selection Distillation
+        Ritualist's Distillation
         
         // decode and execute instruction
         {
@@ -163,9 +161,8 @@
             Bookkeeper's Gambit: ---- // bootstrap injection target (trap handlers)
         }
         Flock's Disintegration
-        Ritualist's Purification
         Jester's Gambit
-        Selection Distillation
+        Ritualist's Distillation
         Set Breakpoint After
         Hermes' Gambit
 

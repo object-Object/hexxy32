@@ -13,6 +13,7 @@
     Locate Heap
     Encyclopedist's Exaltation
 }
+
 #define Load Byte (EAST aqqqqqdaqaaw) = int -> int
 // address -> byte
 {

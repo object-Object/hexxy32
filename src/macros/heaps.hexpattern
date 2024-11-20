@@ -7,9 +7,8 @@
 // reads a value from an address in the heap
 {
     Encyclopedist's Assistant
-    Ritualist's Purification
     Jester's Gambit
-    Selection Distillation
+    Ritualist's Distillation
 }
 
 #define Encyclopedist's Gambit (EAST deeeeeqqaqqqqq) = any, int, int, vec ->
@@ -19,15 +18,9 @@
 // but this is fine here since we expect all memory to contain numbers at all times
 {
     Encyclopedist's Assistant
-    Undertaker's Gambit
-    Ritualist's Purification
-
     Jester's Gambit
-    Numerical Reflection: 3
-    Fisherman's Gambit
-    Surgeon's Exaltation
-
-    Ritualist's Gambit
+    Rotation Gambit
+    Ritualist's Gambit II
 }
 
 #define Encyclopedist's Assistant (NORTH_EAST eeqaqqqqqdqqqqqaqee) = int, int, vec -> int, vec
