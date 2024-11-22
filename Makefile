@@ -1,8 +1,19 @@
-PROGRAMS = $(patsubst programs/%.s,%,$(wildcard programs/*.s))
+ASM_PROGRAMS = $(patsubst programs/%.s,%,$(wildcard programs/*.s))
+RUST_PROGRAMS = $(filter-out hexxy32,$(patsubst rust/%,%,$(wildcard rust/*)))
 
-all: $(PROGRAMS)
+.PHONY: all
+all: asm rust
 
-$(PROGRAMS): %: build/cc_data/%.bin build/%.dump
+.PHONY: asm
+asm: $(ASM_PROGRAMS)
+
+.PHONY: rust
+rust: $(RUST_PROGRAMS)
+
+$(ASM_PROGRAMS): %: build/cc_data/%.bin build/%.dump
+
+$(RUST_PROGRAMS): %: | build/cc_data/rust
+	cd rust/$* && cargo robjcopy ../../build/cc_data/rust/$*.bin
 
 # data dumps for the ComputerCraft-based memory loader
 build/cc_data/%.bin: build/%.out | build/cc_data
@@ -22,6 +33,9 @@ build:
 
 build/cc_data:
 	mkdir -p build/cc_data
+
+build/cc_data/rust:
+	mkdir -p build/cc_data/rust
 
 .PHONY: clean
 clean:
