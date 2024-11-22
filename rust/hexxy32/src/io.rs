@@ -1,4 +1,4 @@
-use core::{arch::asm, fmt};
+use core::arch::asm;
 
 #[cfg(feature = "alloc")]
 use alloc::string::ToString;
@@ -21,17 +21,8 @@ macro_rules! println {
 
 /// Internal function.
 #[cfg(feature = "alloc")]
-pub fn _print(msg: fmt::Arguments) {
+pub fn _print(msg: core::fmt::Arguments) {
     print_str(msg.to_string().as_str());
-}
-
-/// Internal function.
-#[cfg(not(feature = "alloc"))]
-pub fn _print(msg: fmt::Arguments) {
-    print_str(
-        msg.as_str()
-            .unwrap_or("string formatting is not supported without alloc"),
-    );
 }
 
 pub fn print_str(msg: &str) {
