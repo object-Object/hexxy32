@@ -7,22 +7,23 @@
             // drop dummy iota
             Bookkeeper's Gambit: v
 
-            // rx packet format: [data, index] | [true]
+            /* rx packet formats:
+            get last written index: [0]
+            write data: [data, index, 1]
+            read data: [index, 2]
+            */
             Recitation Reflection
             Flock's Disintegration
 
-            // if packet is a single true iota, send the last successfully written index
-            // otherwise write this chunk to the specified index
-            Gemini Decomposition
-            True Reflection
-            Equality Distillation
             {
+                // get last written index
                 Bookkeeper's Gambit: v
                 Numerical Reflection: 0
                 Muninn's Reflection
                 Send Iota
             }
             {
+                // write data
                 // get focus position
                 Gemini Decomposition
                 Numerical Reflection: 19
@@ -38,7 +39,28 @@
                 // save written index to send later
                 Huginn's Gambit
             }
-            Augur's Exaltation
+            {
+                // read data
+                // get focus position
+                Gemini Decomposition
+                Numerical Reflection: 19
+                Cubic Index Distillation
+                Numerical Reflection: 19
+                Locate Heap
+                Additive Distillation
+                
+                // read data and send to computer
+                Ritualist's Purification
+                Numerical Reflection: 2
+                Flock's Gambit
+                Numerical Reflection: 0
+                Jester's Gambit
+                Send Iota
+            }
+            Numerical Reflection: 3
+            Flock's Gambit
+            Jester's Gambit
+            Selection Distillation
             Hermes' Gambit
         }
 

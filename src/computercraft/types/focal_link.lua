@@ -2,6 +2,7 @@
 
 ---@class FocalLink
 ---@field receiveIota fun(): Iota
+---@field receiveIotas fun(n?: number): Iota[]
 ---@field clearReceivedIotas fun()
 ---@field remainingIotaCount fun(): number
 ---@field numLinked fun(): number
