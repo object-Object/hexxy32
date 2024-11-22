@@ -6,12 +6,14 @@ use hexxy32::prelude::*;
 entry!(main);
 
 fn main() -> ! {
-    print_str("hello rust!");
-
     let mut buffer = itoa::Buffer::new();
-    for i in 0..10 {
-        print_str(buffer.format(i));
+    let mut a = 0;
+    let mut b = 1;
+    for _ in 0..32 {
+        let c = a + b;
+        print_str(buffer.format(c));
+        a = b;
+        b = c;
     }
-
-    halt(0);
+    halt(0)
 }

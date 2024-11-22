@@ -80,6 +80,14 @@
 #define Instruction 24: SLLI = num, num, num ->
 // I-type (rd, rs1, imm ->)
 {
+    // truncate before shifting to avoid overflowing 52 integer bits in double
+    Undertaker's Gambit
+    Numerical Reflection: 32
+    Jester's Gambit
+    Subtractive Distillation
+    Truncate Integer
+
+    Jester's Gambit
     Logical Shift Left
     Write Register
 }
