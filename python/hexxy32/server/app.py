@@ -5,6 +5,8 @@ from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel, TypeAdapter
 from starlette.status import HTTP_503_SERVICE_UNAVAILABLE
 
+from .constants import DEFAULT_HOST, DEFAULT_PORT
+
 
 class MsgLoadS2C(BaseModel):
     type: Literal["load"] = "load"
@@ -83,6 +85,6 @@ async def get_dump(filename: str):
 if __name__ == "__main__":
     uvicorn.run(
         app,
-        host="localhost",
-        port=8000,
+        host=DEFAULT_HOST,
+        port=DEFAULT_PORT,
     )
