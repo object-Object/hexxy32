@@ -9,12 +9,22 @@ from starlette.status import HTTP_503_SERVICE_UNAVAILABLE
 class MsgLoadS2C(BaseModel):
     type: Literal["load"] = "load"
     filename: str
-    """Transformed to `data/{filename}.bin"""
+    """Transformed to `data/{filename}` by the loader."""
+    run: bool
+
+
+class MsgDumpS2C(BaseModel):
+    type: Literal["dump"] = "dump"
+    filename: str
+    """Transformed to `data/{filename}` by the loader."""
+
+
+type MsgS2C = MsgLoadS2C | MsgDumpS2C
 
 
 class MsgDoneC2S(BaseModel):
     type: Literal["done"]
-    status: bool
+    status: int
 
 
 type MsgC2S = MsgDoneC2S
@@ -23,6 +33,15 @@ type MsgC2S = MsgDoneC2S
 app = FastAPI()
 
 client_ws: WebSocket | None = None
+
+
+async def send_s2c_message(msg: MsgS2C):
+    if not client_ws:
+        raise HTTPException(
+            status_code=HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Client is not connected",
+        )
+    await client_ws.send_text(msg.model_dump_json())
 
 
 @app.websocket("/ws")
@@ -45,13 +64,20 @@ async def websocket_endpoint(ws: WebSocket):
 
 @app.get("/load")
 async def get_load(filename: str):
-    if not client_ws:
-        raise HTTPException(
-            status_code=HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Client is not connected",
-        )
-    msg = MsgLoadS2C(filename=filename)
-    await client_ws.send_text(msg.model_dump_json())
+    msg = MsgLoadS2C(filename=filename, run=False)
+    await send_s2c_message(msg)
+
+
+@app.get("/run")
+async def get_run(filename: str):
+    msg = MsgLoadS2C(filename=filename, run=True)
+    await send_s2c_message(msg)
+
+
+@app.get("/dump")
+async def get_dump(filename: str):
+    msg = MsgDumpS2C(filename=filename)
+    await send_s2c_message(msg)
 
 
 if __name__ == "__main__":
