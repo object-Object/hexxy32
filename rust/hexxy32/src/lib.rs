@@ -15,6 +15,7 @@ use constants::Syscall;
 use io::print_str;
 
 pub mod constants;
+pub mod graphics;
 pub mod io;
 pub mod prelude;
 

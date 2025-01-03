@@ -98,3 +98,117 @@
     Reveal
     Bookkeeper's Gambit: v
 }
+
+#define Syscall 2: Refresh Display = num, num, num, num, num, num, num ->
+// screen buffer address, ... ->
+{
+    Bookkeeper's Gambit: vvvvvv
+
+    // get screen top left position
+    Locate Sentinel
+    {
+        <screen offset vector>
+    }
+    Flock's Disintegration
+    Additive Distillation
+    
+    // read screen buffer
+    // we assume this address is at the start of a memory page for simplicity
+    Jester's Gambit
+    Load Page
+    Numerical Reflection: 0
+    Numerical Reflection: 73 // ceil(17*17 / 4 bytes per value)
+    Selection Exaltation
+
+    // initial index
+    Numerical Reflection: 0
+    
+    Consideration: {
+        // get word
+        Dioscuri Gambit
+        Undertaker's Gambit
+        Numerical Reflection: 4
+        Division Distillation
+        Floor Purification
+        Selection Distillation
+        
+        // get color value from word (see Load Byte)
+        // 2^((3 - (address % 4)) * 8)
+        Numerical Reflection: 2
+
+        Rotation Gambit
+        Numerical Reflection: 4
+        Modulus Distillation
+
+        Numerical Reflection: 3
+        Jester's Gambit
+        Subtractive Distillation
+
+        Numerical Reflection: 8
+        Multiplicative Distillation
+
+        Power Distillation
+        Division Distillation
+        Floor Purification
+
+        Numerical Reflection: 256 // 2^8
+        Modulus Distillation
+
+        Numerical Reflection: 9 // number of available colors
+        Modulus Distillation
+
+        // get color iota
+        {
+            <Garbage>
+            <Null>
+            // ... (see color table in readme)
+        }
+        Jester's Gambit
+        Selection Distillation
+        
+        // x offset
+        Prospector's Gambit
+
+        Gemini Decomposition
+        Numerical Reflection: 17
+        Modulus Distillation
+        Vector Reflection -X // screen +x direction
+        Multiplicative Distillation
+        
+        // y offset
+        Jester's Gambit
+        Numerical Reflection: 17
+        Division Distillation
+        Floor Purification
+        Vector Reflection -Y // screen +y direction
+        Multiplicative Distillation
+        
+        // write focal port
+        Additive Distillation
+        Numerical Reflection: 4
+        Fisherman's Gambit II
+        Additive Distillation
+        
+        Jester's Gambit
+        Ritualist's Gambit
+
+        // increment index
+        Numerical Reflection: 1
+        Additive Distillation
+
+        // recurse if still in bounds
+        Gemini Decomposition
+        Numerical Reflection: 289 // 17*17
+        Maximus Distillation II
+        Vacant Reflection
+        Numerical Reflection: 5
+        Fisherman's Gambit II
+        Augur's Exaltation
+        Hermes' Gambit
+    Consideration: }
+    Numerical Reflection: -3
+    Fisherman's Gambit II
+    Hermes' Gambit
+
+    Bookkeeper's Gambit: vvvv
+}

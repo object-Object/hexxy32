@@ -39,7 +39,8 @@ Instructions and interrupts can trigger trap handlers (ie. raise exceptions) by 
 | Index (a7) | Description        | a0        | a1     | a2  | a3  | a4  | a5  | a6  |
 | ---------- | ------------------ | --------- | ------ | --- | --- | --- | --- | --- |
 | 0          | Halt               | Exit code |        |     |     |     |     |     |
-| 1          | Print ASCII string | Address   | Length |     |     |     |     |     |
+| 1          | Print ASCII String | Address   | Length |     |     |     |     |     |
+| 2          | Refresh Display    | Address   |        |     |     |     |     |     |
 
 ## Physical layout
 
@@ -60,6 +61,24 @@ Positions are relative to the block where the processor is executed (ie. where t
 ### Memory
 
 Main memory is represented as a 19x19x19 cube of focus holders (from HexDebug), each containing a list of 512 number iotas. A greater sentinel is spawned at the center of the cube.
+
+## Display
+
+A simple 17x17 display is implemented using focal ports from Ducky Peripherals. Pixels in the screen buffer can be set by writing to a buffer somewhere in memory, where the first byte is the top left pixel, the second is one pixel to the right, etc. The display is refreshed using the Refresh Display syscall, where the address points to the screen buffer. This address **must** be located at the start of a memory page.
+
+### Colors
+
+| Iota type | Hex code | Color      | Value |
+| --------- | -------- | ---------- | ----- |
+| Garbage   | 505050   | dark gray  | 0     |
+| Null      | aaaaaa   | light gray | 1     |
+| Jump      | cc0000   | dark red   | 2     |
+| Vector    | ff3030   | light red  | 3     |
+| Pattern   | ffaa00   | orange     | 4     |
+| Boolean   | ffff55   | yellow     | 5     |
+| Double    | 55ff55   | green      | 6     |
+| Entity    | 55ffff   | blue       | 7     |
+| List      | aa00aa   | purple     | 8     |
 
 ## Implementation notes
 
