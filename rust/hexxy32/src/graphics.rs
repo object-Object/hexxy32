@@ -2,8 +2,8 @@ use core::arch::asm;
 
 use crate::constants::Syscall;
 
-pub const DISPLAY_WIDTH: usize = 17;
-pub const DISPLAY_HEIGHT: usize = 17;
+pub const DISPLAY_WIDTH: usize = 16;
+pub const DISPLAY_HEIGHT: usize = 16;
 pub const DISPLAY_SIZE: usize = DISPLAY_WIDTH * DISPLAY_HEIGHT;
 
 #[repr(u8)]
@@ -20,7 +20,8 @@ pub enum Color {
     Purple,
 }
 
-#[repr(align(2048))]
+// 16*16=256, so this should never cross a page boundary
+#[repr(C, align(256))]
 pub struct ScreenBuffer(pub [Color; DISPLAY_SIZE]);
 
 impl ScreenBuffer {

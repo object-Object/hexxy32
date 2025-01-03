@@ -9,9 +9,6 @@ _start:
     ecall
 
 .section .data
-.balign 2048
+.balign 256
 image:
-    .skip 289, 0
-
-# not sure why this is needed.
-.balign 4
+    .skip 256, 0

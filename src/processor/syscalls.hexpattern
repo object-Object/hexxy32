@@ -113,11 +113,14 @@
     Additive Distillation
     
     // read screen buffer
-    // we assume this address is at the start of a memory page for simplicity
+    // we assume this address is word-aligned and does not cross a page boundary
     Jester's Gambit
     Load Page
-    Numerical Reflection: 0
-    Numerical Reflection: 73 // ceil(17*17 / 4 bytes per value)
+
+    Jester's Gambit
+    Gemini Decomposition
+    Numerical Reflection: 64 // 16*16 / 4 bytes per value
+    Additive Distillation
     Selection Exaltation
 
     // initial index
@@ -170,14 +173,14 @@
         Prospector's Gambit
 
         Gemini Decomposition
-        Numerical Reflection: 17
+        Numerical Reflection: 16
         Modulus Distillation
         Vector Reflection -X // screen +x direction
         Multiplicative Distillation
         
         // y offset
         Jester's Gambit
-        Numerical Reflection: 17
+        Numerical Reflection: 16
         Division Distillation
         Floor Purification
         Vector Reflection -Y // screen +y direction
@@ -198,7 +201,7 @@
 
         // recurse if still in bounds
         Gemini Decomposition
-        Numerical Reflection: 289 // 17*17
+        Numerical Reflection: 256 // 16*16
         Maximus Distillation II
         Vacant Reflection
         Numerical Reflection: 5

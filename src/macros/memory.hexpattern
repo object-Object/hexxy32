@@ -1,8 +1,8 @@
 #include "./heaps.hexpattern"
 #include "../types/hexcasting.hexpattern"
 
-#define Load Page = int -> list
-// address -> memory page
+#define Load Page = int -> int, list
+// address -> index, memory page
 {
     // addresses are byte-aligned, but we store 4 bytes in each index of the heap
     Numerical Reflection: 4
@@ -14,7 +14,6 @@
     Locate Heap
     Encyclopedist's Assistant
 
-    Bookkeeper's Gambit: v-
     Ritualist's Purification
 }
 

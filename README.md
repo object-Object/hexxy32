@@ -64,7 +64,7 @@ Main memory is represented as a 19x19x19 cube of focus holders (from HexDebug), 
 
 ## Display
 
-A simple 17x17 display is implemented using focal ports from Ducky Peripherals. Pixels in the screen buffer can be set by writing to a buffer somewhere in memory, where the first byte is the top left pixel, the second is one pixel to the right, etc. The display is refreshed using the Refresh Display syscall, where the address points to the screen buffer. This address **must** be located at the start of a memory page.
+A simple 16x16 display is implemented using focal ports from Ducky Peripherals. Pixels in the screen buffer can be set by writing to a buffer somewhere in memory, where the first byte is the top left pixel, the second is one pixel to the right, etc. The display is refreshed using the Refresh Display syscall, where the address points to the screen buffer. The address **must** be word-aligned, and the buffer **must not** cross a page boundary. The easiest way to do this should be to align the buffer to 256 bytes.
 
 ### Colors
 
