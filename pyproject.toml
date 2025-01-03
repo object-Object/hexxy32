@@ -8,6 +8,9 @@ version = "0.1.0"
 requires-python = ">= 3.12"
 dependencies = [
     "pandas>=2.2.3",
+    "riscof @ git+https://github.com/riscv/riscof@9fe3597d75",
+    # https://github.com/riscv-software-src/riscof/issues/122
+    "riscv-isac @ git+https://github.com/riscv-software-src/riscv-isac@777d2b4762",
     "fastapi>=0.115.5",
     "websockets>=14.1",
     "uvicorn>=0.32.1",
@@ -73,6 +76,7 @@ exclude = [
     ".venv",
     "build",
     "target",
+    "riscof/sail_cSim",
 ]
 
 typeCheckingMode = "basic"
