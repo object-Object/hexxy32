@@ -40,12 +40,7 @@ impl ScreenBuffer {
 
     pub fn refresh(&self) {
         unsafe {
-            asm!(
-                "ecall",
-                in("a0") self.0.as_ptr(),
-                in("a7") Syscall::RefreshDisplay as u32,
-                options(nostack),
-            );
+            refresh_display(self.0.as_ptr() as *const u8);
         };
     }
 }
@@ -58,4 +53,14 @@ impl Default for ScreenBuffer {
 
 pub fn get_screen_index(x: usize, y: usize) -> usize {
     y * DISPLAY_WIDTH + x
+}
+
+#[allow(clippy::missing_safety_doc)]
+pub unsafe fn refresh_display(buffer: *const u8) {
+    asm!(
+        "ecall",
+        in("a0") buffer,
+        in("a7") Syscall::RefreshDisplay as u32,
+        options(nostack),
+    );
 }

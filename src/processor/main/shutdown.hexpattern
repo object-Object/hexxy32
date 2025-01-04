@@ -25,8 +25,9 @@
     // save the ravenmind
     Ritualist's Gambit
 
-    // halt if the exit flag was set
-    Augur's Purification
+    // halt if the exit flag was set to 1
+    Numerical Reflection: 1
+    Equality Distillation
     {
         <"Terminating execution.">
     }

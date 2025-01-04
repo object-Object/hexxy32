@@ -214,4 +214,9 @@
     Hermes' Gambit
 
     Bookkeeper's Gambit: vvvv
+
+    // set exit flag to 2, because the display doesn't update until we go to the next tick
+    Numerical Reflection: 35
+    Numerical Reflection: 2
+    Write Register
 }

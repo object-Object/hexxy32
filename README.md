@@ -14,13 +14,13 @@ Memory is represented as a list of number iotas. Hex Casting's numbers are inter
 
 Registers are stored in the [ravenmind](https://hexcasting.hexxy.media/v/0.11.1-7/1.0/en_us/#patterns/readwrite@hexcasting:local) as a list.
 
-| Index | Value            |
-| ----- | ---------------- |
-| 0-31  | Normal registers |
-| 32    | Current `pc`     |
-| 33    | Next `pc`        |
-| 34    | Trap message     |
-| 35    | Exit flag        |
+| Index | Value                                             |
+| ----- | ------------------------------------------------- |
+| 0-31  | Normal registers                                  |
+| 32    | Current `pc`                                      |
+| 33    | Next `pc`                                         |
+| 34    | Trap message                                      |
+| 35    | Exit flag (0=continue, 1=halt, 2=go to next tick) |
 
 ## Traps
 
