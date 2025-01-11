@@ -36,11 +36,13 @@ Instructions and interrupts can trigger trap handlers (ie. raise exceptions) by 
 
 ## System calls
 
-| Index (a7) | Description        | a0        | a1     | a2  | a3  | a4  | a5  | a6  |
-| ---------- | ------------------ | --------- | ------ | --- | --- | --- | --- | --- |
-| 0          | Halt               | Exit code |        |     |     |     |     |     |
-| 1          | Print ASCII String | Address   | Length |     |     |     |     |     |
-| 2          | Refresh Display    | Address   |        |     |     |     |     |     |
+| Index (a7) | Description        | a0        | a1     | a2  | a3  | a4  | a5  | a6  | Return (a0) |
+| ---------- | ------------------ | --------- | ------ | --- | --- | --- | --- | --- | ----------- |
+| 0          | Halt               | Exit code |        |     |     |     |     |     |             |
+| 1          | Print ASCII String | Address   | Length |     |     |     |     |     |             |
+| 2          | Refresh Display    | Address   |        |     |     |     |     |     |             |
+| 3          | Read I/O Port      | Port      |        |     |     |     |     |     | Value       |
+| 4          | Write I/O Port     | Port      | Value  |     |     |     |     |     |             |
 
 ## Physical layout
 

@@ -36,3 +36,26 @@ pub fn print_str(msg: &str) {
         );
     };
 }
+
+#[allow(clippy::missing_safety_doc)]
+pub unsafe fn read_io_port(port: u32) -> u32 {
+    let mut value: u32 = port;
+    asm!(
+        "ecall",
+        inout("a0") value,
+        in("a7") Syscall::ReadIOPort as u32,
+        options(nostack, nomem),
+    );
+    value
+}
+
+#[allow(clippy::missing_safety_doc)]
+pub unsafe fn write_io_port(port: u32, value: u32) {
+    asm!(
+        "ecall",
+        in("a0") port,
+        in("a1") value,
+        in("a7") Syscall::WriteIOPort as u32,
+        options(nostack, nomem),
+    );
+}

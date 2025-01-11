@@ -1,4 +1,5 @@
 #include "../types/hexcasting.hexpattern"
+#include "../macros/bytes.hexpattern"
 #include "../macros/memory.hexpattern"
 #include "../macros/registers.hexpattern"
 
@@ -219,4 +220,59 @@
     Numerical Reflection: 35
     Numerical Reflection: 2
     Write Register
+}
+
+#define Syscall 3: Read I/O Port = num, num, num, num, num, num, num ->
+// port, ... ->
+{
+    Bookkeeper's Gambit: vvvvvv
+    
+    // get port offset
+    Vector Reflection -X
+    Multiplicative Distillation
+
+    // get port position
+    Locate Sentinel
+    {
+        <port 0 offset vector>
+    }
+    Flock's Disintegration
+    Additive Distillation
+    Additive Distillation
+
+    // read value
+    Ritualist's Purification
+    Length Purification
+    Floor Purification
+    Numerical Reflection: 32
+    Truncate Integer
+
+    // write value to a0
+    Numerical Reflection: 10
+    Jester's Gambit
+    Write Register
+}
+
+#define Syscall 4: Write I/O Port
+// port, value, ... ->
+{
+    Bookkeeper's Gambit: vvvvv
+    
+    // get port offset
+    Jester's Gambit
+    Vector Reflection -X
+    Multiplicative Distillation
+
+    // get port position
+    Locate Sentinel
+    {
+        <port 0 offset vector>
+    }
+    Flock's Disintegration
+    Additive Distillation
+    Additive Distillation
+
+    // write value
+    Jester's Gambit
+    Ritualist's Gambit
 }

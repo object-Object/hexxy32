@@ -6,6 +6,7 @@
 /build/
 
 .ruff_cache/
+.theia/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

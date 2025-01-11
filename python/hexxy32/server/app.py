@@ -5,6 +5,8 @@ from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel, TypeAdapter
 from starlette.status import HTTP_503_SERVICE_UNAVAILABLE
 
+from hexxy32.utils.arduino import MsgGPIOC2S, SerialInterface
+
 from .constants import DEFAULT_HOST, DEFAULT_PORT
 
 
@@ -47,7 +49,7 @@ async def send_s2c_message(msg: MsgS2C):
 
 
 @app.websocket("/ws")
-async def websocket_endpoint(ws: WebSocket):
+async def ws_loader(ws: WebSocket):
     global client_ws
 
     await ws.accept()
@@ -62,6 +64,52 @@ async def websocket_endpoint(ws: WebSocket):
                     print(f"done: {status}")
     except WebSocketDisconnect:
         client_ws = None
+
+
+@app.websocket("/ws/arduino")
+async def ws_arduino(ws: WebSocket):
+    await ws.accept()
+
+    device = await ws.receive_text()
+    with SerialInterface(device, baudrate=115200) as interface:
+        try:
+            while True:
+                msg = MsgGPIOC2S()
+                msg.asbyte = int(await ws.receive_text())
+
+                response = handle_gpio(interface, msg)
+
+                await ws.send_text(response)
+
+        except WebSocketDisconnect:
+            pass
+
+
+def handle_gpio(interface: SerialInterface, msg: MsgGPIOC2S) -> str:
+    pin = msg.b.pin
+    if not (0 <= pin < 14):
+        raise ValueError(f"Invalid pin: {pin}")
+
+    match msg.b.command:
+        case 0:  # read
+            return str(interface.digital_read(pin))
+
+        case 1:  # write
+            value = msg.b.arg
+            if value not in (0, 1):
+                raise ValueError(f"Invalid pin value: {value}")
+            interface.digital_write(pin, value)
+            return ""
+
+        case 2:  # mode
+            mode = msg.b.arg
+            if mode not in (0, 1, 2):
+                raise ValueError(f"Invalid pin mode: {mode}")
+            interface.pin_mode(pin, mode)
+            return ""
+
+        case command:
+            raise ValueError(f"Invalid command: {command}")
 
 
 @app.get("/load")
