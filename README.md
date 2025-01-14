@@ -1,10 +1,8 @@
 # hexxy32
 
-A RISC-V (`rv32i`) computer implemented in Hex Casting. Heavily WIP.
+A RISC-V (`rv32i`) computer implemented in Hex Casting.
 
 Backups of my development world can be downloaded from the [hexxy32-world](https://github.com/object-Object/hexxy32-world) repository.
-
-https://github.com/user-attachments/assets/30436234-cfac-47f1-bec6-a259698d09bb
 
 ## Data representation
 
