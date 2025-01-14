@@ -3,8 +3,9 @@
 #include "../types/hexcasting.hexpattern"
 
 #define Encyclopedist's Exaltation (EAST aqqqqqeqaqqqqq) = int, int, vec -> any
-// address, heap size, heap location -> value
-// reads a value from an address in the heap
+// heap index, heap size, heap location -> value
+// reads a value from an index in the heap
+// NOTE: this index is not an address, since each number stores 4 bytes
 {
     Encyclopedist's Assistant
     Jester's Gambit
@@ -12,8 +13,8 @@
 }
 
 #define Encyclopedist's Gambit (EAST deeeeeqqaqqqqq) = any, int, int, vec ->
-// value, address, heap size, heap location ->
-// writes a value to an address in the heap
+// value, heap index, heap size, heap location ->
+// writes a value to an index in the heap
 // will mishap if writing to an orphaned index (no adjacent iotas)
 // but this is fine here since we expect all memory to contain numbers at all times
 {
@@ -24,7 +25,7 @@
 }
 
 #define Encyclopedist's Assistant (NORTH_EAST eeqaqqqqqdqqqqqaqee) = int, int, vec -> int, vec
-// address, heap size, heap location -> index, focus
+// heap index, heap size, heap location -> list index, focus
 // internal helper macro
 {
     // index in focus
@@ -39,11 +40,8 @@
     Rotation Gambit II
     
     // index in heap
-    Undertaker's Gambit
     Division Distillation
     Floor Purification
-    Jester's Gambit
-    Modulus Distillation
 
     // focus holder pos
     Rotation Gambit
