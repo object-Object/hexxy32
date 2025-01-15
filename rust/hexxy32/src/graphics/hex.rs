@@ -1,3 +1,5 @@
+//! Graphics module for the 16x16 focal port display.
+
 use core::arch::asm;
 
 use crate::constants::Syscall;

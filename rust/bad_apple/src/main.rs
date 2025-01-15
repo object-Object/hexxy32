@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use hexxy32::graphics::{refresh_display, Color, ScreenBuffer};
+use hexxy32::graphics::hex::{refresh_display, Color, ScreenBuffer};
 use hexxy32::prelude::*;
 use include_bytes_aligned::include_bytes_aligned;
 

@@ -146,3 +146,19 @@ pub fn halt(code: u32) -> ! {
     };
     loop {}
 }
+
+pub fn sleep_n(ticks: u32) {
+    for _ in 0..ticks {
+        sleep();
+    }
+}
+
+pub fn sleep() {
+    unsafe {
+        asm!(
+            "ecall",
+            in("a7") 5,
+            options(nostack, nomem),
+        );
+    }
+}

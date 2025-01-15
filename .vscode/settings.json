@@ -24,7 +24,8 @@
         "rust/hexxy32/Cargo.toml",
         "rust/demo_alloc/Cargo.toml",
         "rust/demo_no_alloc/Cargo.toml",
-        "rust/bad_apple/Cargo.toml"
+        "rust/bad_apple/Cargo.toml",
+        "rust/arduino/Cargo.toml"
     ],
     "rust-analyzer.check.allTargets": false,
     "rust-analyzer.cargo.features": "all",

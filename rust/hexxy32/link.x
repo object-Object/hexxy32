@@ -6,6 +6,7 @@ ENTRY(_start);
 
 MEMORY {
     ram (rwx) : ORIGIN = 0, LENGTH = 19*19*19 * 512*4
+    screen (rw) : ORIGIN = (19*19*19 + 19 + 1) * 512*4, LENGTH = 2 * 512*4
 }
 
 REGION_ALIAS("REGION_TEXT",   ram);
@@ -18,6 +19,8 @@ REGION_ALIAS("REGION_STACK",  ram);
 PROVIDE(_stack_start = ORIGIN(REGION_STACK) + LENGTH(REGION_STACK));
 PROVIDE(_stack_size = 2K);
 PROVIDE(_heap_size = 0);
+
+_screen_start = ORIGIN(screen);
 
 SECTIONS {
     .text : {
