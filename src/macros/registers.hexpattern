@@ -1,3 +1,6 @@
+#include "./heaps.hexpattern"
+#include "../types/hexcasting.hexpattern"
+
 #define Read Register (EAST aqqqqqeadeqa) = num -> num
 // index -> value
 {
@@ -26,4 +29,45 @@
     Muninn's Reflection
     Augur's Exaltation
     Huginn's Gambit
+}
+
+#define Read CSR (EAST aqqqqqedaqed) = num -> num
+// address -> value
+{
+    Locate CSR
+    Ritualist's Distillation
+}
+
+#define Write CSR (EAST deeeeeqdaqed) = num, num ->
+// address, value ->
+{
+    Jester's Gambit
+    Locate CSR
+    Rotation Gambit
+    Ritualist's Gambit II
+}
+
+#define Locate CSR (EAST dedqdeqdaqed) = num -> vec, num
+// address -> focus position, list index
+{
+    // focus offset
+    Numerical Reflection: 512
+    Dioscuri Gambit
+    Division Distillation
+    Floor Purification
+    Vector Reflection +X
+    Multiplicative Distillation
+    
+    // focus position
+    Locate Sentinel
+    {
+        <CSR 0 offset vector>
+    }
+    Flock's Disintegration
+    Additive Distillation
+    Additive Distillation
+
+    // index in focus
+    Rotation Gambit II
+    Modulus Distillation
 }

@@ -1,4 +1,5 @@
 #include "../../types/hexcasting.hexpattern"
+#include "../../macros/registers.hexpattern"
 
 {
     // processor pos (injected during bootstrap)
@@ -24,6 +25,15 @@
 
     // save the ravenmind
     Ritualist's Gambit
+
+    // increment cycle counter
+    Numerical Reflection: 3072 <SOUTH_EAST aqaaeeaaeqaawawqaa>
+    Locate CSR
+    Dioscuri Gambit
+    Ritualist's Distillation
+    Numerical Reflection: 1
+    Additive Distillation
+    Ritualist's Gambit II
 
     // halt if the exit flag was set to 1
     Numerical Reflection: 1

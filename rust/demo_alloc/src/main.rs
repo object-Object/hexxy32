@@ -4,6 +4,7 @@
 
 use alloc::vec::Vec;
 use hexxy32::prelude::*;
+use hexxy32::register::{cycle, instret};
 
 entry!(main);
 
@@ -16,6 +17,8 @@ fn main() -> ! {
         data.push(i);
     }
     println!("{data:?}");
+
+    println!("cycle: {}\ninstret: {}", cycle::read(), instret::read());
 
     halt(0);
 }

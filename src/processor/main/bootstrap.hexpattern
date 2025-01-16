@@ -1,4 +1,5 @@
 #include "../../types/hexcasting.hexpattern"
+#include "../../macros/registers.hexpattern"
 
 // pos, startup, shutdown, eval -> startup, shutdown, eval
 {
@@ -49,4 +50,13 @@
 
     Jester's Gambit
     Muninn's Reflection // eval
+
+    // clear cycle and instret counters
+    Numerical Reflection: 3072 <SOUTH_EAST aqaaeeaaeqaawawqaa> // cycle
+    Numerical Reflection: 0
+    Write CSR
+    
+    Numerical Reflection: 3074 <SOUTH_EAST aqaaeawaqaawaaqqaae> // instret
+    Numerical Reflection: 0
+    Write CSR
 }

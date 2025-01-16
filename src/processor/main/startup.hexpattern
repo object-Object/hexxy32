@@ -1,4 +1,6 @@
 #include "../../types/hexcasting.hexpattern"
+#include "../../macros/bytes.hexpattern"
+#include "../../macros/registers.hexpattern"
 
 {
     // processor pos (injected during bootstrap)
@@ -26,4 +28,19 @@
     Augur's Exaltation
     
     Huginn's Gambit
+
+    // update time and timeh counters
+    Timekeeper's Reflection
+    
+    Numerical Reflection: 3073 <SOUTH_EAST aqaaeeaaqaeeawaqaaq> // time
+    Prospector's Gambit
+    Numerical Reflection: 32
+    Truncate Integer
+    Write CSR
+    
+    Numerical Reflection: 3201 <SOUTH_EAST aqaaeeqeeaaqweaaeqaaq> // timeh
+    Jester's Gambit
+    Numerical Reflection: 32
+    Logical Shift Right
+    Write CSR
 }

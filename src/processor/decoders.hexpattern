@@ -200,3 +200,23 @@
     Numerical Reflection: 21
     Extend Sign
 }
+
+#define Decode Instruction: CSR = num -> num, num, num
+// instruction -> rd, rs1, imm
+// same as I, but does not read rs1 or sign-extend imm
+{
+    // rd
+    Numerical Reflection: 11
+    Numerical Reflection: 7
+    Slice Integer II
+    
+    // rs1
+    Jester's Gambit
+    Numerical Reflection: 3
+    Logical Shift Right
+    Numerical Reflection: 5
+    Split Integer
+
+    // imm
+    Jester's Gambit
+}

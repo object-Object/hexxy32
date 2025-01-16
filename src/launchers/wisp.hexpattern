@@ -35,24 +35,14 @@
     Flock's Disintegration
     Hermes' Gambit
 
-    // wrap eval in a quine to run many instructions per tick
-    // we're using a quine so we can store eval on the call stack, because otherwise we hit the stack limit
+    // wrap eval in iris to run many instructions per tick
     {
-        {
-            Bookkeeper's Gambit: - // regular eval code
-        }
-        Flock's Disintegration
-        Hermes' Gambit
-        
-        // Ibra oniki ra. QUINIO alef a ra.
-        {
-            Bookkeeper's Gambit: - // self
-        }
-        Flock's Disintegration
-        Numerical Reflection: 6
-        Prospector's Gambit
-        Surgeon's Exaltation
-        
+        Vacant Reflection
+        Iris' Gambit
+    }
+    Jester's Gambit
+    Additive Distillation
+    {
         // run another instruction if we have more than 10^4 ops remaining
         Thanatos' Reflection
         Numerical Reflection: 10
@@ -61,23 +51,21 @@
         Maximus Distillation
 
         // but only if the exit flag isn't set
+        Muninn's Reflection
         Numerical Reflection: 35
-        Read Register
+        Selection Distillation
         Numerical Reflection: 0
         Equality Distillation
         Conjunction Distillation
 
-        Jester's Gambit
-        Vacant Reflection
+        Prospector's Gambit
+        {
+            Bookkeeper's Gambit: v
+        }
         Augur's Exaltation
         Hermes' Gambit
     }
-    Numerical Reflection: 1
-    Rotation Gambit
-    Surgeon's Exaltation
-    Numerical Reflection: 6
-    Prospector's Gambit
-    Surgeon's Exaltation
+    Additive Distillation
 
     // wisp loop: run startup, then evals, then shutdown
     Jester's Gambit

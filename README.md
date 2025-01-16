@@ -1,6 +1,6 @@
 # hexxy32
 
-A RISC-V (`rv32i`) computer implemented in Hex Casting.
+A RISC-V (`RV32I_Zicntr_Zicsr`) computer implemented in Hex Casting.
 
 Backups of my development world can be downloaded from the [hexxy32-world](https://github.com/object-Object/hexxy32-world) repository.
 
@@ -86,12 +86,23 @@ A simple 16x16 display is implemented using focal ports from Ducky Peripherals. 
 
 Misaligned loads and stores are currently not supported, and will raise a fatal exception if attempted.
 
+### CSRs
+
+CSR instructions that write to the CSR are currently not implemented, and will raise a fatal exception if attempted, since all existing CSRs are read-only.
+
+To simplify the implementation, hexxy32 deviates from the RISC-V spec by incrementing the `instret` counter when ECALL is executed (`instret` is not supposed to be incremented for instructions that cause synchronous exceptions).
+
+The `cycleh` and `instreth` counters are not implemented, since I'm not expecting hexxy32 to run for the amount of time it would take to overflow those counters.
+
+The `cycle` and `instret` counters are cleared during processor bootstrap. This means they will always be zero when stepping with the trinket launcher. I think this should be fine, since these counters are meant for performance monitoring, which would not be necessary when stepping the processor by hand.
+
 ## Requirements
 
 - Hex Casting 0.11.x
 - Hexal
 - MoreIotas
 - HexDebug
+- Chisels and Bits
 
 ## Links
 

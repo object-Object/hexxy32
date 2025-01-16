@@ -1,4 +1,5 @@
 #include "../../macros/registers.hexpattern"
+#include "../../macros/exceptions.hexpattern"
 
 #define Instruction 38: SYSTEM = num, num, num ->
 // I-type (rd, rs1, imm ->)
@@ -7,7 +8,7 @@
     Bookkeeper's Gambit: vv-
 
     // imm can be 0 (ECALL) or 111111111111 (EBREAK)
-    // technically EBREAK is actually 000000000001, but the I-type decoder does sign extension
+    // technically EBREAK is actually 000000000001, but the I-type decoder does sign extension (TODO: use CSR decoder and rename it to SYSTEM instead?)
     Numerical Reflection: 0
     Equality Distillation
     {
@@ -19,6 +20,134 @@
     }
     {
         // EBREAK (currently a no-op)
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+}
+
+#define Instruction 39: CSRRW = num, num, num ->
+// CSR-type (rd, rs1, csr ->)
+{
+    // not implemented, since it always writes to the CSR
+    Bookkeeper's Gambit: vv-
+    {
+        <"CSRRW instruction attempted to write to a read-only CSR.">
+        <"CSR:">
+    }
+    Jester's Gambit
+    Integration Distillation
+    Raise Exception: Fatal
+}
+
+#define Instruction 40: CSRRS = num, num, num ->
+// CSR-type (rd, rs1, csr ->)
+{
+    // if rs1=x0, do not write to the CSR
+    Prospector's Gambit
+    Augur's Purification
+    {
+        Bookkeeper's Gambit: vv-
+        {
+            <"CSRRS instruction attempted to write to a read-only CSR.">
+            <"CSR:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Bookkeeper's Gambit: v-
+        Read CSR
+        Write Register
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+}
+
+#define Instruction 41: CSRRC = num, num, num ->
+// CSR-type (rd, rs1, csr ->)
+{
+    // if rs1=x0, do not write to the CSR
+    Prospector's Gambit
+    Augur's Purification
+    {
+        Bookkeeper's Gambit: vv-
+        {
+            <"CSRRC instruction attempted to write to a read-only CSR.">
+            <"CSR:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Bookkeeper's Gambit: v-
+        Read CSR
+        Write Register
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+}
+
+#define Instruction 42: CSRRWI = num, num, num ->
+// CSR-type (rd, imm, csr ->)
+{
+    // not implemented, since it always writes to the CSR
+    Bookkeeper's Gambit: vv-
+    {
+        <"CSRRWI instruction attempted to write to a read-only CSR.">
+        <"CSR:">
+    }
+    Jester's Gambit
+    Integration Distillation
+    Raise Exception: Fatal
+}
+
+#define Instruction 43: CSRRSI = num, num, num ->
+// CSR-type (rd, imm, csr ->)
+{
+    // if imm=0, do not write to the CSR
+    Prospector's Gambit
+    Augur's Purification
+    {
+        Bookkeeper's Gambit: vv-
+        {
+            <"CSRRSI instruction attempted to write to a read-only CSR.">
+            <"CSR:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Bookkeeper's Gambit: v-
+        Read CSR
+        Write Register
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+}
+
+#define Instruction 44: CSRRCI = num, num, num ->
+// CSR-type (rd, imm, csr ->)
+{
+    // if imm=0, do not write to the CSR
+    Prospector's Gambit
+    Augur's Purification
+    {
+        Bookkeeper's Gambit: vv-
+        {
+            <"CSRRCI instruction attempted to write to a read-only CSR.">
+            <"CSR:">
+        }
+        Jester's Gambit
+        Integration Distillation
+        Raise Exception: Fatal
+    }
+    {
+        Bookkeeper's Gambit: v-
+        Read CSR
+        Write Register
     }
     Augur's Exaltation
     Hermes' Gambit

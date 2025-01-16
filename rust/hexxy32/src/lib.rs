@@ -4,6 +4,8 @@
 #[cfg(feature = "alloc")]
 pub extern crate alloc;
 
+pub use riscv::{register, result as riscv_result};
+
 use core::{
     arch::{asm, global_asm},
     panic::PanicInfo,
